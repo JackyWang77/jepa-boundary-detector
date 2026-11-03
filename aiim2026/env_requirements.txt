@@ -1,0 +1,25 @@
+# 4060/CUDA 机器环境重建清单（与 mac aiim env 对齐）
+# 用法：conda create -n aiim python=3.10 && pip install -r env_requirements.txt
+# 注意：torch 行在 4060 上必须先按 CUDA 版装，
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+#   （mac 上为 mps 版 torch 2.14.1；两者 API 一致，实验代码只依赖 'cuda'/'mps' device 开关）
+
+torch==2.14.1
+torchvision==0.29.2
+gymnasium==1.4.0
+gymnasium-robotics==1.4.2
+hydra-core==1.3.8
+hydra-submitit-launcher==1.2.0
+mujoco==3.17.0
+ogbench==1.2.2
+hdf5plugin==7.1.0
+lancedb==0.41.0
+pytorch-lightning==2.6.6
+stable-pretraining==0.1.8
+stable-worldmodel==0.1.1
+
+# 另需（随第三方仓库自带或小依赖，如缺则补）：
+#   git clone https://gh-proxy.com/https://github.com/galilai-group/stable-worldmodel.git
+#   → aiim2026/third_party/stable-worldmodel（本机该目录未进 git，4060 单独 clone 同一上游）
+#   ~/.stable_worldmodel/checkpoints/ 重建：HF quentinll 全家桶下载 pusht/cube 权重并转换
+#   （convert_ckpt.py 流程；下载后 torch.load 完整性验证——既有教训）

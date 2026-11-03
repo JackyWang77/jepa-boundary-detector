@@ -1,0 +1,95 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Label-Free Boundary Detection for Rollout in Frozen JEPA World Models}
+
+\author{\IEEEauthorblockN{Jiaqi Wang}
+\IEEEauthorblockA{\textit{School of Mechanical and Electrical Engineering} \\
+\textit{Guangzhou University}\\
+Guangzhou, China}
+\and
+\IEEEauthorblockN{Tao Zou\textsuperscript{*}}
+\IEEEauthorblockA{\textit{School of Mechanical and Electrical Engineering} \\
+\textit{Guangzhou University}\\
+Guangzhou, China \\
+\textsuperscript{*}Corresponding author}
+}
+
+\maketitle
+
+\begin{abstract}
+% TODO: 摘要最后写。一句话主张：无监督变点切分在冻结JEPA潜空间自动发现物理边界，
+% 蒸馏成轻量在线检测头，边界触发停止重锚提升长距离规划成功率。
+\end{abstract}
+
+\begin{IEEEkeywords}
+world models, change-point detection, model-based planning, representation learning
+\end{IEEEkeywords}
+
+\section{Introduction}
+% TODO: Intro 三段式
+% 1) 长距离规划中世界模型 rollout 漂移，冻结模型尤甚（Mind the Gap 数字：d=25/50/75 成功率衰减）
+% 2) 现有分层方案需要训练额外模块；我们问：冻结模型自身潜空间里是否已有足够的边界信息
+% 3) 贡献：三路通用特征 + 无监督变点切分 + 轻量检测头 + 边界触发停止重锚，全部零任务规则
+
+\section{Related Work}
+% TODO: 三块
+% 1) World models & JEPA (LeWM, I-JEPA/V-JEPA)
+% 2) Hierarchical/world-model planning (Mind the Gap, H-JEPA, subgoal 方法)
+% 3) Change-point detection (CUSUM, PELT, BOCPD, Basseville & Nikiforov)
+
+\section{Method}
+% TODO: 三小节
+% A. Problem setup: frozen LeWM, PushT, planning with CEM
+% B. Feature bank: f1 increment energy, f2 direction change, f3 innovation（正交性论证）
+% C. Unsupervised segmentation + distillation: PELT teacher, causal student head
+
+\section{Experiments}
+% TODO: E1 复现基线 / Table 1 消融+对齐 / Table 2 三臂成功率 / Fig 2 漂移清零
+
+\section{Conclusion}
+% TODO: 一段总结 + limitation（单环境、蒸馏误差）
+
+% ---- 图表占位（写正文时插入并引用）----
+% Fig. 1: 管线图 潜变量流 -> 三路特征 -> PELT切分 -> student头 -> 边界停止重锚
+% Fig. 2: 一条轨迹重锚定前后 rollout 漂移曲线（漂移清零）
+% Table I: 检测消融 + 物理事件对齐 F1（特征递增 / 切分方法 / 头部）
+% Table II: 三臂成功率主表（平坦 vs 边界停止 vs 等频率停止, d=25/50/75）
+
+\begin{thebibliography}{00}
+
+\bibitem{lewm2026} L. Maes, Q. Le Lidec, D. Scieur, Y. LeCun, and R. Balestriero, ``LeWorldModel: Stable end-to-end joint-embedding predictive architecture from pixels,'' arXiv preprint arXiv:2603.19312, 2026.
+
+\bibitem{mindthegap2026} N. Caselli, F. Massafra, S. Punzo, S. Lo Sardo, I. Pantelidis, and S. K. Bhethanabhotla, ``Mind the gap: Promises and pitfalls of hierarchical planning in LeWorldModel,'' arXiv preprint arXiv:2607.12547, 2026.
+
+\bibitem{lecun2022path} Y. LeCun, ``A path towards autonomous machine intelligence,'' OpenReview, version 0.9.2, 2022.
+
+\bibitem{assran2023ijepa} M. Assran, Q. Duval, I. Misra, P. Bojanowski, P. Vincent, M. Rabbat, Y. LeCun, and N. Ballas, ``Self-supervised learning from images with a joint-embedding predictive architecture,'' in Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit. (CVPR), 2023, pp. 15619--15629.
+
+\bibitem{hjepa2026} W. Zhang, B. Terver, M. Rabbat, Y. LeCun, and R. Balestriero, ``H-JEPA: End-to-end learning of hierarchical world models for visual planning,'' arXiv preprint arXiv:2610.06805, 2026.
+
+\bibitem{pace2026} J. Nie, J. Li, C. Liu, J. Lao, J. Zhang, T. Zhang, L. Lin, and S. Huang, ``PACE: Phase-aware chunk execution for robot policies with action chunking,'' arXiv preprint arXiv:2606.00537, 2026.
+
+\bibitem{autohorizon2026} H. Wang, G. Zhang, Y. Yan, R. R. Kompella, and G. Liu, ``VLA knows its limits: Adaptive execution horizons for robot policies,'' in Proc. Eur. Conf. Comput. Vis. (ECCV), 2026.
+
+\bibitem{page1954cusum} E. S. Page, ``Continuous inspection schemes,'' Biometrika, vol. 41, no. 1/2, pp. 100--115, 1954.
+
+\bibitem{killick2012pelt} R. Killick, P. Fearnhead, and I. A. Eckley, ``Optimal detection of changepoints with a linear computational cost,'' J. Amer. Statist. Assoc., vol. 107, no. 500, pp. 1590--1598, 2012.
+
+\bibitem{adams2007bocpd} R. P. Adams and D. J. C. MacKay, ``Bayesian online changepoint detection,'' arXiv preprint arXiv:0710.3742, 2007.
+
+% TODO: 核实后加入 Basseville & Nikiforov 1993 (Detection of Abrupt Changes)
+
+\end{thebibliography}
+
+\end{document}

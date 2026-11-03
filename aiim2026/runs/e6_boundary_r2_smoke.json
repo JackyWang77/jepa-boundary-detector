@@ -1,0 +1,130 @@
+{
+  "arm": "boundary",
+  "goal_offset_steps": 75,
+  "eval_budget": 150,
+  "seed": 42,
+  "interval": 0,
+  "success_rate": 0.0,
+  "episode_successes": [
+    false,
+    false
+  ],
+  "replan_logs": {
+    "0": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.6645
+          },
+          {
+            "step": 8,
+            "p": 0.9256
+          },
+          {
+            "step": 13,
+            "p": 0.6444
+          },
+          {
+            "step": 21,
+            "p": 0.9776
+          },
+          {
+            "step": 26,
+            "p": 0.9927
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "boundary"
+          },
+          {
+            "block": 13,
+            "type": "boundary"
+          },
+          {
+            "block": 18,
+            "type": "natural"
+          },
+          {
+            "block": 21,
+            "type": "boundary"
+          },
+          {
+            "block": 26,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "1": [
+      {
+        "fires": [
+          {
+            "step": 4,
+            "p": 0.9093
+          },
+          {
+            "step": 11,
+            "p": 0.5789
+          },
+          {
+            "step": 18,
+            "p": 0.8838
+          },
+          {
+            "step": 24,
+            "p": 0.8489
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 4,
+            "type": "boundary"
+          },
+          {
+            "block": 9,
+            "type": "natural"
+          },
+          {
+            "block": 11,
+            "type": "boundary"
+          },
+          {
+            "block": 16,
+            "type": "natural"
+          },
+          {
+            "block": 18,
+            "type": "boundary"
+          },
+          {
+            "block": 23,
+            "type": "natural"
+          },
+          {
+            "block": 24,
+            "type": "boundary"
+          },
+          {
+            "block": 29,
+            "type": "natural"
+          }
+        ]
+      }
+    ]
+  }
+}

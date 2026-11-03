@@ -1,0 +1,49 @@
+{
+  "gate1": {
+    "points_total": 48843,
+    "nan_free": true,
+    "f1_raw_in_01": true,
+    "f2_in_-1_1": true,
+    "fast_subspace_energy_share_hold": 0.23289772073441667,
+    "fast_share_ge_15pct": true
+  },
+  "gate3": {
+    "target": "union of kinematic events (push_onset|settle), (+-3 steps)",
+    "pos_rate_hold": 0.3112677238023324,
+    "auc": {
+      "f1": {
+        "train_auc": 0.6360928977604196,
+        "hold_auc": 0.6407999372196516
+      },
+      "f2": {
+        "train_auc": 0.4186227272726475,
+        "hold_auc": 0.5797204370063886
+      },
+      "f3": {
+        "train_auc": 0.6138407820682512,
+        "hold_auc": 0.5740637535753114
+      }
+    },
+    "per_event_breakdown_hold": {
+      "f1": {
+        "push_onset": 0.6016986786137416,
+        "settle": 0.6366142149246368
+      },
+      "f2": {
+        "push_onset": 0.5814106618172613,
+        "settle": 0.5641579832016537
+      },
+      "f3": {
+        "push_onset": 0.5717292957224119,
+        "settle": 0.5330638167706855
+      }
+    },
+    "floor": 0.55,
+    "pass": true
+  },
+  "events_hold": {
+    "push_onset": 349,
+    "settle": 228
+  },
+  "overall": "PASS"
+}

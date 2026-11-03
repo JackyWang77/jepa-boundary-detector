@@ -1,0 +1,129 @@
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arbabi and Mezi{\'c}(2017)]{arbabi17}
+Hassan Arbabi and Igor Mezi{\'c}.
+\newblock Ergodic theory, dynamic mode decomposition, and computation of
+  spectral properties of the {Koopman} operator.
+\newblock \emph{SIAM Journal on Applied Dynamical Systems}, 16\penalty0
+  (4):\penalty0 2096--2126, 2017.
+\newblock arXiv:1611.06664.
+
+\bibitem[Assran et~al.(2023)Assran, Duval, Misra, Bojanowski, Vincent, Rabbat,
+  LeCun, and Ballas]{ijepa}
+Mahmoud Assran, Quentin Duval, Ishan Misra, Piotr Bojanowski, Pascal Vincent,
+  Mike Rabbat, Yann LeCun, and Nicolas Ballas.
+\newblock Self-supervised learning from images with a joint-embedding
+  predictive architecture.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition (CVPR)}, 2023.
+
+\bibitem[Bardes et~al.(2022)Bardes, Ponce, and LeCun]{vicreg}
+Adrien Bardes, Jean Ponce, and Yann LeCun.
+\newblock {VICReg}: Variance-invariance-covariance regularization for
+  self-supervised learning.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2022.
+
+\bibitem[Bardes et~al.(2024)Bardes, Garrido, Ponce, Chen, Rabbat, LeCun, and
+  Assran]{vjepa}
+Adrien Bardes, Quentin Garrido, Jean Ponce, Xinlei Chen, Michael Rabbat, Yann
+  LeCun, and Mahmoud Assran.
+\newblock Revisiting feature prediction for learning visual representations
+  from video.
+\newblock \emph{arXiv preprint arXiv:2404.08471}, 2024.
+
+\bibitem[Fu et~al.(2020)Fu, Kumar, Nachum, Tate, Guadarrama, Narvekar, and
+  Levine]{d4rl}
+Justin Fu, Aviral Kumar, Ofir Nachum, George Tate, Sergio Guadarrama, Jonathan
+  Narvekar, and Sergey Levine.
+\newblock {D4RL}: Datasets for deep data-driven reinforcement learning.
+\newblock In \emph{arXiv preprint arXiv:2004.07219}, 2020.
+
+\bibitem[Geyer(1992)]{geyer92}
+Charles~J. Geyer.
+\newblock Practical {Markov} chain {Monte Carlo}.
+\newblock \emph{Statistical Science}, 7\penalty0 (4):\penalty0 473--483, 1992.
+
+\bibitem[Girgis et~al.(2026)Girgis, Labriji, and Bennis]{jeapa5g}
+Abanoub~M. Girgis, Ibtissam Labriji, and Mehdi Bennis.
+\newblock Hierarchical {JEPA} meets predictive remote control in beyond {5G}
+  networks.
+\newblock \emph{arXiv preprint arXiv:2602.07000}, 2026.
+
+\bibitem[Maes et~al.(2026{\natexlab{a}})Maes, Le~Lidec, Facury, Massaudi,
+  Chaurasia, Capuano, Gao, Gillin, Haramati, Scieur, LeCun, and
+  Balestriero]{swm}
+Lucas Maes, Quentin Le~Lidec, Luiz Facury, Nassim Massaudi, Ayush Chaurasia,
+  Francesco Capuano, Richard Gao, Taj Gillin, Dan Haramati, Damien Scieur, Yann
+  LeCun, and Randall Balestriero.
+\newblock stable-worldmodel: A platform for reproducible world modeling
+  research and evaluation.
+\newblock In \emph{NeurIPS Datasets and Benchmarks Track}, 2026{\natexlab{a}}.
+\newblock arXiv:2602.08968.
+
+\bibitem[Maes et~al.(2026{\natexlab{b}})Maes, Le~Lidec, Scieur, LeCun, and
+  Balestriero]{lewm}
+Lucas Maes, Quentin Le~Lidec, Damien Scieur, Yann LeCun, and Randall
+  Balestriero.
+\newblock {LeWorldModel}: Stable end-to-end joint-embedding predictive
+  architecture from pixels.
+\newblock \emph{arXiv preprint arXiv:2603.19312}, 2026{\natexlab{b}}.
+
+\bibitem[Nachum et~al.(2018)Nachum, Gu, Lee, and Levine]{hiro}
+Ofir Nachum, Shixiang~(Steve) Gu, Honglak Lee, and Sergey Levine.
+\newblock {HIRO}: Data-efficient hierarchical reinforcement learning.
+\newblock In \emph{Conference on Robot Learning (CoRL)}, 2018.
+
+\bibitem[Rowley et~al.(2009)Rowley, Mezi{\'c}, Bagheri, Schlatter, and
+  Henningson]{dmd}
+Clarence~W. Rowley, Igor Mezi{\'c}, Shervin Bagheri, Philipp Schlatter, and
+  Dan~S. Henningson.
+\newblock Spectral analysis of nonlinear flows.
+\newblock \emph{Journal of Fluid Mechanics}, 641:\penalty0 115--127, 2009.
+
+\bibitem[Rydzewski and G{\"o}kdemir(2024)]{spectralmaps}
+Jakub Rydzewski and Tu{\u{g}}{\c{c}}e G{\"o}kdemir.
+\newblock Learning {Markovian} dynamics with spectral maps.
+\newblock \emph{Journal of Chemical Physics}, 160\penalty0 (9), 2024.
+\newblock arXiv:2311.16411.
+
+\bibitem[Sutton et~al.(1999)Sutton, Precup, and Singh]{sutton99}
+Richard~S. Sutton, Doina Precup, and Satinder Singh.
+\newblock Between {MDPs} and semi-{MDPs}: A framework for temporal abstraction
+  in reinforcement learning.
+\newblock \emph{Artificial Intelligence}, 112\penalty0 (1--2):\penalty0
+  181--211, 1999.
+
+\bibitem[Wang et~al.(2022)Wang, Du, Torralba, Isola, Zhang, and Tian]{dmdp}
+Tongzhou Wang, Simon~S. Du, Antonio Torralba, Phillip Isola, Amy Zhang, and
+  Yuandong Tian.
+\newblock Denoised {MDPs}: Learning world models better than the world itself.
+\newblock In \emph{International Conference on Machine Learning (ICML)}, 2022.
+\newblock arXiv:2206.15477.
+
+\bibitem[Williams et~al.(2015)Williams, Kevrekidis, and Rowley]{koopman_edmd}
+Matthew~O. Williams, Ioannis~G. Kevrekidis, and Clarence~W. Rowley.
+\newblock A data-driven approximation of the {Koopman} operator: Extending
+  {Dynamic Mode Decomposition}.
+\newblock \emph{Journal of Nonlinear Science}, 25\penalty0 (6):\penalty0
+  1307--1346, 2015.
+
+\bibitem[Wiskott and Sejnowski(2002)]{sfa}
+Laurenz Wiskott and Terrence~J. Sejnowski.
+\newblock Slow feature analysis: Unsupervised learning of invariances.
+\newblock \emph{Neural Computation}, 14\penalty0 (4):\penalty0 715--770, 2002.
+
+\bibitem[Zhang et~al.(2026)Zhang, Terver, Rabbat, LeCun, and
+  Balestriero]{hjepa}
+Wancong Zhang, Basile Terver, Michael Rabbat, Yann LeCun, and Randall
+  Balestriero.
+\newblock {H-JEPA}: End-to-end learning of hierarchical world models for visual
+  planning.
+\newblock \emph{arXiv preprint arXiv:2610.06805}, 2026.
+
+\end{thebibliography}

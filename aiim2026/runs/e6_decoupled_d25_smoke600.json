@@ -1,0 +1,44 @@
+{
+  "arm": "decoupled",
+  "goal_offset_steps": 25,
+  "eval_budget": 50,
+  "seed": 42,
+  "interval": 0,
+  "success_rate": 0.0,
+  "episode_successes": [
+    false,
+    false
+  ],
+  "replan_logs": {
+    "0": [
+      {
+        "fires": [],
+        "replans": [
+          {
+            "block": -1,
+            "type": "natural"
+          },
+          {
+            "block": -1,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "1": [
+      {
+        "fires": [],
+        "replans": [
+          {
+            "block": -1,
+            "type": "natural"
+          },
+          {
+            "block": -1,
+            "type": "natural"
+          }
+        ]
+      }
+    ]
+  }
+}

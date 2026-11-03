@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-03",
+  "note": "revision per REVISION_20261103.md \u00a71; original e5_alignment.json untouched (rhythm-trap finding is preserved)",
+  "original_rows": {
+    "pelt": {
+      "macro_f1": 0.6360874680874681,
+      "micro_f1": 0.6504751847940866,
+      "tp": 308,
+      "fp": 65,
+      "fn": 266
+    },
+    "student": {
+      "macro_f1": 0.6288354619236973,
+      "micro_f1": 0.6450939457202505,
+      "tp": 309,
+      "fp": 75,
+      "fn": 265
+    },
+    "random": {
+      "macro_f1": 0.547381788146494,
+      "micro_f1": 0.5617740232312566,
+      "tp": 266,
+      "fp": 107,
+      "fn": 308
+    },
+    "equal": {
+      "macro_f1": 0.4987317796582504,
+      "micro_f1": 0.5300950369588173,
+      "tp": 251,
+      "fp": 122,
+      "fn": 323
+    }
+  },
+  "constant_rhythm": [
+    {
+      "phase": 0,
+      "macro_f1": 0.6623763279204455,
+      "micro_f1": 0.6735849056603773,
+      "tp": 357,
+      "fp": 129,
+      "fn": 217
+    },
+    {
+      "phase": 1,
+      "macro_f1": 0.694223195105548,
+      "micro_f1": 0.6972301814708691,
+      "tp": 365,
+      "fp": 108,
+      "fn": 209
+    },
+    {
+      "phase": 2,
+      "macro_f1": 0.7060340035781213,
+      "micro_f1": 0.7147030185004869,
+      "tp": 367,
+      "fp": 86,
+      "fn": 207
+    },
+    {
+      "phase": 3,
+      "macro_f1": 0.6957407037407037,
+      "micro_f1": 0.6986027944111777,
+      "tp": 350,
+      "fp": 78,
+      "fn": 224
+    },
+    {
+      "phase": 4,
+      "macro_f1": 0.6806929932812287,
+      "micro_f1": 0.6795918367346939,
+      "tp": 333,
+      "fp": 73,
+      "fn": 241
+    }
+  ],
+  "rhythm_macro_median": 0.694223195105548,
+  "rhythm_macro_max": 0.7060340035781213,
+  "student_auc_vs_exact_events": 0.5236691041353853,
+  "student_auc_vs_dilated_events": 0.44549532817098614,
+  "narrative": "Physical events in this PushT expert data carry an intrinsic rhythm (~one event per 3.6 model steps, near-uniform): a constant 5-step timer reaches micro F1 0.674-0.680 across phases, and neither PELT (0.650) nor the distilled student (0.645) beats it; the student per-step probability has near-zero discrimination (AUC 0.52 vs exact event steps). F1-style alignment metrics on this data must report the constant-rhythm baseline, otherwise they are inflated by rhythm alone."
+}

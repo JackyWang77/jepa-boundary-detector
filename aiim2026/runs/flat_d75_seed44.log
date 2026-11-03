@@ -1,0 +1,20 @@
+[  55270   59438  209574  212072  252081  274418  323855  395230  397198
+  441893  474849  485526  614332  792527  894723  957051  960398  978099
+  990807  990971 1050084 1261268 1282559 1296413 1300581 1391796 1400148
+ 1443265 1530224 1554210 1556184 1580477 1611454 1663358 1693982 1712957
+ 1842111 1905342 1973417 1997331 2003747 2087744 2154979 2178029 2214759
+ 2240951 2241710 2285263 2307816 2318727]
+[eval] saving videos to /Users/wanglanlan/.stable_worldmodel/checkpoints/pusht (one env_{i}.mp4 per env)
+CEM solve time: 140.5997 seconds
+CEM solve time: 166.5103 seconds
+CEM solve time: 155.7101 seconds
+CEM solve time: 152.5842 seconds
+CEM solve time: 152.6198 seconds
+CEM solve time: 149.1444 seconds
+{'success_rate': 14.000000000000002, 'episode_successes': array([False,  True, False,  True, False, False, False, False, False,
+        True,  True, False, False,  True, False, False, False, False,
+       False, False, False, False, False,  True, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False,  True, False, False,
+       False, False, False, False, False]), 'seeds': None}
+[eval] videos saved to /Users/wanglanlan/.stable_worldmodel/checkpoints/pusht

@@ -1,0 +1,20 @@
+  self.pid = _posixsubprocess.fork_exec(
+/Users/wanglanlan/miniforge3/envs/aiim/lib/python3.10/subprocess.py:1796: RuntimeWarning: lancedb fork support is experimental: the internal async runtime has been reset in the forked child, but a small chance of deadlock remains if other state was mid-operation at fork time. The 'forkserver' or 'spawn' multiprocessing start method is likely a safer alternative.
+  self.pid = _posixsubprocess.fork_exec(
+1869611 valid starting points found for evaluation.
+[  42431   46611  204631  207392  238620  255589  290743  381913  383575
+  424861  462790  476923  604484  788995  876260  939399  941591  949740
+  963548  963796 1034984 1231163 1255197 1274943 1280942 1373226 1384624
+ 1440085 1525500 1554523 1556718 1581781 1616027 1669701 1709703 1728712
+ 1858563 1911590 1974779 1994289 2002848 2101124 2164214 2192742 2228482
+ 2258647 2259781 2305507 2315371 2322292]
+[eval] saving videos to /Users/wanglanlan/.stable_worldmodel/checkpoints/pusht (one env_{i}.mp4 per env)
+CEM solve time: 140.4324 seconds
+CEM solve time: 34.6187 seconds
+{'success_rate': 82.0, 'episode_successes': array([ True,  True, False,  True,  True, False,  True,  True,  True,
+        True,  True,  True,  True,  True, False, False, False,  True,
+        True,  True,  True,  True, False,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+       False,  True, False,  True, False]), 'seeds': None}
+[eval] videos saved to /Users/wanglanlan/.stable_worldmodel/checkpoints/pusht

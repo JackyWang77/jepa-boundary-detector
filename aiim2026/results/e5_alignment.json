@@ -1,0 +1,37 @@
+{
+  "n_hold_episodes": 100,
+  "n_events": 574,
+  "tolerance_model_steps": 2,
+  "methods": {
+    "pelt": {
+      "macro_f1": 0.6360874680874681,
+      "micro_f1": 0.6504751847940866,
+      "tp": 308,
+      "fp": 65,
+      "fn": 266
+    },
+    "student": {
+      "macro_f1": 0.6288354619236973,
+      "micro_f1": 0.6450939457202505,
+      "tp": 309,
+      "fp": 75,
+      "fn": 265
+    },
+    "random": {
+      "macro_f1": 0.547381788146494,
+      "micro_f1": 0.5617740232312566,
+      "tp": 266,
+      "fp": 107,
+      "fn": 308
+    },
+    "equal": {
+      "macro_f1": 0.4987317796582504,
+      "micro_f1": 0.5300950369588173,
+      "tp": 251,
+      "fp": 122,
+      "fn": 323
+    }
+  },
+  "narrative": "statistical-dynamics segmentation (degraded wording), success-rate test still runs",
+  "narrative_threshold": 0.7
+}

@@ -1,0 +1,48 @@
+{
+  "table": {
+    "25": {
+      "per_seed": [
+        88.0,
+        92.0,
+        82.0
+      ],
+      "mean": 87.33333333333333,
+      "std": 4.109609335312651,
+      "n": 3,
+      "published": 94.0,
+      "published_std": 2.0
+    },
+    "50": {
+      "per_seed": [
+        50.0,
+        46.0,
+        42.0
+      ],
+      "mean": 46.0,
+      "std": 3.265986323710904,
+      "n": 3,
+      "published": 52.7,
+      "published_std": 5.0
+    },
+    "75": {
+      "per_seed": [
+        16.0,
+        18.0,
+        14.000000000000002
+      ],
+      "mean": 16.0,
+      "std": 1.6329931618554514,
+      "n": 3,
+      "published": 18.0,
+      "published_std": 2.0
+    }
+  },
+  "checks": {
+    "d25_within_1.5std": false,
+    "d50_within_1.5std": true,
+    "d75_within_1.5std": true,
+    "monotone_collapse": true,
+    "all_9_logs": true
+  },
+  "verdict": "CHECK GAPS"
+}

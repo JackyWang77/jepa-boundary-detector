@@ -1,0 +1,126 @@
+{
+  "arm": "boundary",
+  "goal_offset_steps": 75,
+  "eval_budget": 150,
+  "seed": 42,
+  "interval": 0,
+  "success_rate": 0.0,
+  "episode_successes": [
+    false,
+    false
+  ],
+  "replan_logs": {
+    "0": [
+      {
+        "fires": [
+          {
+            "step": 7,
+            "p": 0.5111
+          },
+          {
+            "step": 12,
+            "p": 0.5705
+          },
+          {
+            "step": 17,
+            "p": 0.5442
+          },
+          {
+            "step": 22,
+            "p": 0.5357
+          },
+          {
+            "step": 27,
+            "p": 0.5768
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 7,
+            "type": "boundary"
+          },
+          {
+            "block": 12,
+            "type": "boundary"
+          },
+          {
+            "block": 17,
+            "type": "boundary"
+          },
+          {
+            "block": 22,
+            "type": "boundary"
+          },
+          {
+            "block": 27,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "1": [
+      {
+        "fires": [
+          {
+            "step": 7,
+            "p": 0.5029
+          },
+          {
+            "step": 12,
+            "p": 0.5775
+          },
+          {
+            "step": 17,
+            "p": 0.5685
+          },
+          {
+            "step": 22,
+            "p": 0.5874
+          },
+          {
+            "step": 27,
+            "p": 0.5579
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 7,
+            "type": "boundary"
+          },
+          {
+            "block": 12,
+            "type": "boundary"
+          },
+          {
+            "block": 17,
+            "type": "boundary"
+          },
+          {
+            "block": 22,
+            "type": "boundary"
+          },
+          {
+            "block": 27,
+            "type": "boundary"
+          }
+        ]
+      }
+    ]
+  }
+}

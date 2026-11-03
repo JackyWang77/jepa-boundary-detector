@@ -1,0 +1,6 @@
+[heartbeat] attempt=1 cache=250M
+/Users/wanglanlan/miniforge3/envs/aiim/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py:189: UserWarning: The `resume_download` argument is deprecated and ignored in `hf_hub_download`. Downloads always resume whenever possible.
+  warnings.warn(
+FAIL attempt=1: RemoteEntryNotFoundError 404 Client Error. (Request ID: Root=1-6aea0034-0ee9b70806e52be9262b1317;8d65bd39-7536-4948-85cc-c59b00ca0863)
+
+Entry Not Found for url: https://hf-mirror.com/quentinll/lewm-tworooms/resolve/main/tworoom.tar.zst.

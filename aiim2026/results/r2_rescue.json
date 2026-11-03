@@ -1,0 +1,155 @@
+{
+  "rhythm_baselines_hold": [
+    {
+      "phase": 0,
+      "micro_f1": 0.6853823814133592,
+      "tp": 354,
+      "fp": 132,
+      "fn": 193
+    },
+    {
+      "phase": 1,
+      "micro_f1": 0.7098039215686275,
+      "tp": 362,
+      "fp": 111,
+      "fn": 185
+    },
+    {
+      "phase": 2,
+      "micro_f1": 0.726,
+      "tp": 363,
+      "fp": 90,
+      "fn": 184
+    },
+    {
+      "phase": 3,
+      "micro_f1": 0.7076923076923077,
+      "tp": 345,
+      "fp": 83,
+      "fn": 202
+    },
+    {
+      "phase": 4,
+      "micro_f1": 0.6904512067156349,
+      "tp": 329,
+      "fp": 77,
+      "fn": 218
+    }
+  ],
+  "rhythm_max_micro_f1": 0.726,
+  "label_rate_train": 0.24049283260277218,
+  "data_pos_weight": 3.158128078817734,
+  "sweep": [
+    {
+      "head": "gru",
+      "pos_weight": 1.0,
+      "params": 1745,
+      "hold_auc": 0.8037955128170381,
+      "fire_micro_f1": 0.5475578406169666,
+      "fire_macro_f1": 0.5350599955599956,
+      "tp_fp_fn": [
+        213,
+        18,
+        334
+      ],
+      "epochs": 168,
+      "seconds": 103.9
+    },
+    {
+      "head": "gru",
+      "pos_weight": 1.5,
+      "params": 1745,
+      "hold_auc": 0.7984724714198211,
+      "fire_micro_f1": 0.5838509316770186,
+      "fire_macro_f1": 0.5718860077830665,
+      "tp_fp_fn": [
+        235,
+        23,
+        312
+      ],
+      "epochs": 109,
+      "seconds": 66.8
+    },
+    {
+      "head": "gru",
+      "pos_weight": 2.0,
+      "params": 1745,
+      "hold_auc": 0.8033250036589132,
+      "fire_micro_f1": 0.6294536817102138,
+      "fire_macro_f1": 0.620634620281679,
+      "tp_fp_fn": [
+        265,
+        30,
+        282
+      ],
+      "epochs": 136,
+      "seconds": 81.8
+    },
+    {
+      "head": "gru",
+      "pos_weight": 3.16,
+      "params": 1745,
+      "hold_auc": 0.8043375740591172,
+      "fire_micro_f1": 0.6795016987542469,
+      "fire_macro_f1": 0.6747415411386,
+      "tp_fp_fn": [
+        300,
+        36,
+        247
+      ],
+      "epochs": 95,
+      "seconds": 57.6
+    },
+    {
+      "head": "gru",
+      "pos_weight": 3.0,
+      "params": 1745,
+      "hold_auc": 0.8004835186279345,
+      "fire_micro_f1": 0.6658986175115207,
+      "fire_macro_f1": 0.6617676751353223,
+      "tp_fp_fn": [
+        289,
+        32,
+        258
+      ],
+      "epochs": 123,
+      "seconds": 74.6
+    },
+    {
+      "head": "cnn",
+      "pos_weight": 3.16,
+      "params": 2769,
+      "hold_auc": 0.813022479279709,
+      "fire_micro_f1": 0.6567505720823799,
+      "fire_macro_f1": 0.6492428111104581,
+      "tp_fp_fn": [
+        287,
+        40,
+        260
+      ],
+      "epochs": 103,
+      "seconds": 19.5
+    }
+  ],
+  "selected": {
+    "head": "cnn",
+    "pos_weight": 3.16,
+    "params": 2769,
+    "hold_auc": 0.813022479279709,
+    "fire_micro_f1": 0.6567505720823799,
+    "fire_macro_f1": 0.6492428111104581,
+    "tp_fp_fn": [
+      287,
+      40,
+      260
+    ],
+    "epochs": 103,
+    "seconds": 19.5
+  },
+  "gates": {
+    "auc_gate": 0.7,
+    "f1_gate": 0.745,
+    "rhythm_max": 0.726
+  },
+  "verdict": "PARTIAL: 0.65<=AUC<0.70 or F1 gate missed -> boundary arm reports partial signal, decoupled carries the positive result"
+}

@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-02 14:54",
+  "experiment": "E3 change-point segmentation",
+  "signal": [
+    "f1_mean",
+    "f1_std",
+    "f2_mean",
+    "f2_std",
+    "f3_mean",
+    "f3_std"
+  ],
+  "head_offset": 3,
+  "corpus_mean": [
+    5.0970156628129555,
+    1.9224289080942838,
+    0.5365508240365178,
+    0.2292215719319286,
+    1.0760117956106476,
+    0.2927087197345084
+  ],
+  "corpus_std": [
+    1.5895296707480253,
+    0.7613529524107004,
+    0.15973950948737964,
+    0.13426013231937287,
+    0.31651670433276585,
+    0.27698838636637724
+  ],
+  "pelt_cost": "normal",
+  "penalty": "BIC (see bic_pen)",
+  "bocpd": {
+    "hazard": 0.2,
+    "median_pelt_seg_len": 5.0,
+    "obs_var": 1.0,
+    "prior": "N(0,1) per channel"
+  },
+  "n_episodes": 500,
+  "smoke": false,
+  "cp_convention": "b = first model step of the new segment"
+}

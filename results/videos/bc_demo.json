@@ -1,0 +1,38 @@
+{
+  "arm": "bc",
+  "episodes": 5,
+  "success": 0.0,
+  "mean_max_coverage": 0.4,
+  "runs": [
+    {
+      "episode": 0,
+      "success": false,
+      "max_coverage": 0.921,
+      "steps": 300
+    },
+    {
+      "episode": 1,
+      "success": false,
+      "max_coverage": 0.143,
+      "steps": 300
+    },
+    {
+      "episode": 2,
+      "success": false,
+      "max_coverage": 0.097,
+      "steps": 300
+    },
+    {
+      "episode": 3,
+      "success": false,
+      "max_coverage": 0.226,
+      "steps": 300
+    },
+    {
+      "episode": 4,
+      "success": false,
+      "max_coverage": 0.613,
+      "steps": 300
+    }
+  ]
+}

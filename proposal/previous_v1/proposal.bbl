@@ -1,0 +1,51 @@
+\begin{thebibliography}{1}
+
+\bibitem{assran2023ijepa}
+Mahmoud Assran, Quentin Duval, Ishan Misra, Piotr Bojanowski, Pascal Vincent,
+  Michael Rabbat, Yann LeCun, and Nicolas Ballas.
+\newblock Self-supervised learning from images with a joint-embedding
+  predictive architecture.
+\newblock In {\em Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition (CVPR)}, pages 15619--15629, 2023.
+
+\bibitem{vicreg2022}
+Adrien Bardes, Jean Ponce, and Yann LeCun.
+\newblock {VICReg}: Variance-invariance-covariance regularization for
+  self-supervised learning.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2022.
+
+\bibitem{spectral2026}
+Berker Demirel, Valentino Maiorca, Marco Fumero, Marco Mondelli, Francesco
+  Locatello, et~al.
+\newblock $\lambda$-{JEPA}: Spectral anti-collapse regularization for
+  self-supervised learning.
+\newblock {\em arXiv preprint arXiv:2609.35288}, 2026.
+
+\bibitem{lecun2022path}
+Yann LeCun.
+\newblock A path towards autonomous machine intelligence.
+\newblock {\em OpenReview}, 2022.
+\newblock Version 0.9.2, June 2022.
+
+\bibitem{lewm2026}
+Lucas Maes, Quentin {Le Lidec}, Damien Scieur, Yann LeCun, and Randall
+  Balestriero.
+\newblock {LeWorldModel}: Stable end-to-end joint-embedding predictive
+  architecture from pixels.
+\newblock {\em arXiv preprint arXiv:2603.19312}, 2026.
+
+\bibitem{psgjepa2026}
+H.~Yan, J.~Zhu, et~al.
+\newblock Is forward prediction enough? physical state grounding for {JEPA}
+  world models.
+\newblock {\em arXiv preprint arXiv:2608.06799}, 2026.
+
+\bibitem{hilewm2026}
+Wancong Zhang, Basile Terver, Artem Zholus, Soham Chitnis, Harsh Sutaria, Mido
+  Assran, Randall Balestriero, Amir Bar, Adrien Bardes, Yann LeCun, and Nicolas
+  Ballas.
+\newblock Hierarchical planning with latent world models.
+\newblock {\em arXiv preprint arXiv:2604.03208}, 2026.
+
+\end{thebibliography}

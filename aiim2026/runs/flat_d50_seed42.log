@@ -1,0 +1,20 @@
+  self.pid = _posixsubprocess.fork_exec(
+1402587 valid starting points found for evaluation.
+[ 152058  161663  202992  210277  218527  225388  314786  392296  433886
+  475270  535767  643926  830451  870516  944111 1020672 1032445 1041718
+ 1046714 1057641 1057850 1186372 1217077 1246862 1286000 1306244 1474257
+ 1505661 1529012 1579839 1624790 1632839 1670249 1708329 1763677 1769887
+ 1797953 1810950 1818746 1827346 1915976 1930964 1962943 2004417 2004970
+ 2060829 2075278 2162043 2255433 2266307]
+[eval] saving videos to /Users/wanglanlan/.stable_worldmodel/checkpoints/pusht (one env_{i}.mp4 per env)
+CEM solve time: 142.6085 seconds
+CEM solve time: 107.5807 seconds
+CEM solve time: 94.8230 seconds
+CEM solve time: 93.9280 seconds
+{'success_rate': 50.0, 'episode_successes': array([ True, False, False, False, False, False, False,  True,  True,
+        True,  True,  True, False, False, False,  True,  True, False,
+       False, False, False,  True,  True,  True,  True, False,  True,
+       False,  True, False,  True,  True, False,  True,  True, False,
+        True, False, False,  True,  True, False,  True,  True, False,
+       False, False,  True, False,  True]), 'seeds': None}
+[eval] videos saved to /Users/wanglanlan/.stable_worldmodel/checkpoints/pusht

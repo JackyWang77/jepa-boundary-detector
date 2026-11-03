@@ -1,0 +1,2729 @@
+{
+  "arm": "boundary",
+  "goal_offset_steps": 75,
+  "eval_budget": 150,
+  "seed": 42,
+  "interval": 0,
+  "success_rate": 8.0,
+  "episode_successes": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false
+  ],
+  "replan_logs": {
+    "0": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.8996
+          },
+          {
+            "step": 9,
+            "p": 0.5629
+          },
+          {
+            "step": 16,
+            "p": 0.5221
+          },
+          {
+            "step": 21,
+            "p": 0.7139
+          },
+          {
+            "step": 29,
+            "p": 0.68
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "natural"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "boundary"
+          },
+          {
+            "block": 26,
+            "type": "natural"
+          },
+          {
+            "block": 29,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "1": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.9365
+          },
+          {
+            "step": 8,
+            "p": 0.6079
+          },
+          {
+            "step": 17,
+            "p": 0.9957
+          },
+          {
+            "step": 22,
+            "p": 0.55
+          },
+          {
+            "step": 27,
+            "p": 0.8335
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "boundary"
+          },
+          {
+            "block": 13,
+            "type": "natural"
+          },
+          {
+            "block": 17,
+            "type": "boundary"
+          },
+          {
+            "block": 22,
+            "type": "boundary"
+          },
+          {
+            "block": 27,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.7232
+          },
+          {
+            "step": 10,
+            "p": 0.5427
+          },
+          {
+            "step": 18,
+            "p": 0.9952
+          },
+          {
+            "step": 25,
+            "p": 0.9593
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 10,
+            "type": "boundary"
+          },
+          {
+            "block": 15,
+            "type": "natural"
+          },
+          {
+            "block": 18,
+            "type": "boundary"
+          },
+          {
+            "block": 23,
+            "type": "natural"
+          },
+          {
+            "block": 25,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.5451
+          },
+          {
+            "step": 8,
+            "p": 0.6051
+          },
+          {
+            "step": 13,
+            "p": 0.8766
+          },
+          {
+            "step": 20,
+            "p": 0.961
+          },
+          {
+            "step": 25,
+            "p": 0.9907
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "boundary"
+          },
+          {
+            "block": 13,
+            "type": "boundary"
+          },
+          {
+            "block": 18,
+            "type": "natural"
+          },
+          {
+            "block": 20,
+            "type": "boundary"
+          },
+          {
+            "block": 25,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "4": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.9593
+          },
+          {
+            "step": 16,
+            "p": 0.7164
+          },
+          {
+            "step": 24,
+            "p": 0.5135
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 13,
+            "type": "natural"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "natural"
+          },
+          {
+            "block": 24,
+            "type": "boundary"
+          },
+          {
+            "block": 29,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "5": [
+      {
+        "fires": [
+          {
+            "step": 4,
+            "p": 0.5574
+          },
+          {
+            "step": 14,
+            "p": 0.9667
+          },
+          {
+            "step": 19,
+            "p": 0.9923
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 4,
+            "type": "boundary"
+          },
+          {
+            "block": 9,
+            "type": "natural"
+          },
+          {
+            "block": 14,
+            "type": "boundary"
+          },
+          {
+            "block": 19,
+            "type": "boundary"
+          },
+          {
+            "block": 24,
+            "type": "natural"
+          },
+          {
+            "block": 29,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "6": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.9822
+          },
+          {
+            "step": 15,
+            "p": 0.8779
+          },
+          {
+            "step": 20,
+            "p": 0.6333
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 13,
+            "type": "natural"
+          },
+          {
+            "block": 15,
+            "type": "boundary"
+          },
+          {
+            "block": 20,
+            "type": "boundary"
+          },
+          {
+            "block": 25,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.7221
+          },
+          {
+            "step": 8,
+            "p": 0.8195
+          },
+          {
+            "step": 13,
+            "p": 0.765
+          },
+          {
+            "step": 24,
+            "p": 0.9216
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "boundary"
+          },
+          {
+            "block": 13,
+            "type": "boundary"
+          },
+          {
+            "block": 18,
+            "type": "natural"
+          },
+          {
+            "block": 23,
+            "type": "natural"
+          },
+          {
+            "block": 24,
+            "type": "boundary"
+          },
+          {
+            "block": 29,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "8": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.8545
+          },
+          {
+            "step": 10,
+            "p": 0.8772
+          },
+          {
+            "step": 15,
+            "p": 0.6249
+          },
+          {
+            "step": 24,
+            "p": 0.9869
+          },
+          {
+            "step": 29,
+            "p": 0.8101
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 10,
+            "type": "boundary"
+          },
+          {
+            "block": 15,
+            "type": "boundary"
+          },
+          {
+            "block": 20,
+            "type": "natural"
+          },
+          {
+            "block": 24,
+            "type": "boundary"
+          },
+          {
+            "block": 29,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "9": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.7057
+          },
+          {
+            "step": 9,
+            "p": 0.9811
+          },
+          {
+            "step": 15,
+            "p": 0.7804
+          },
+          {
+            "step": 21,
+            "p": 0.5463
+          },
+          {
+            "step": 26,
+            "p": 0.7514
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "natural"
+          },
+          {
+            "block": 15,
+            "type": "boundary"
+          },
+          {
+            "block": 20,
+            "type": "natural"
+          },
+          {
+            "block": 21,
+            "type": "boundary"
+          },
+          {
+            "block": 26,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "10": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.8446
+          },
+          {
+            "step": 13,
+            "p": 0.9775
+          },
+          {
+            "step": 18,
+            "p": 0.5334
+          },
+          {
+            "step": 23,
+            "p": 0.8316
+          },
+          {
+            "step": 29,
+            "p": 0.7767
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 13,
+            "type": "boundary"
+          },
+          {
+            "block": 18,
+            "type": "boundary"
+          },
+          {
+            "block": 23,
+            "type": "boundary"
+          },
+          {
+            "block": 28,
+            "type": "natural"
+          },
+          {
+            "block": 29,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "11": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.796
+          },
+          {
+            "step": 8,
+            "p": 0.7807
+          },
+          {
+            "step": 13,
+            "p": 0.9394
+          },
+          {
+            "step": 18,
+            "p": 0.9969
+          },
+          {
+            "step": 23,
+            "p": 0.627
+          },
+          {
+            "step": 28,
+            "p": 0.8499
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "boundary"
+          },
+          {
+            "block": 13,
+            "type": "boundary"
+          },
+          {
+            "block": 18,
+            "type": "boundary"
+          },
+          {
+            "block": 23,
+            "type": "boundary"
+          },
+          {
+            "block": 28,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "12": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.8314
+          },
+          {
+            "step": 9,
+            "p": 0.6294
+          },
+          {
+            "step": 16,
+            "p": 0.7557
+          },
+          {
+            "step": 22,
+            "p": 0.7604
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "natural"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "natural"
+          },
+          {
+            "block": 22,
+            "type": "boundary"
+          },
+          {
+            "block": 27,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "13": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.5279
+          },
+          {
+            "step": 9,
+            "p": 0.6333
+          },
+          {
+            "step": 24,
+            "p": 0.9083
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "natural"
+          },
+          {
+            "block": 19,
+            "type": "natural"
+          },
+          {
+            "block": 24,
+            "type": "boundary"
+          },
+          {
+            "block": 29,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "14": [
+      {
+        "fires": [
+          {
+            "step": 6,
+            "p": 0.7156
+          },
+          {
+            "step": 11,
+            "p": 0.7935
+          },
+          {
+            "step": 16,
+            "p": 0.667
+          },
+          {
+            "step": 27,
+            "p": 0.9601
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 6,
+            "type": "boundary"
+          },
+          {
+            "block": 11,
+            "type": "boundary"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "natural"
+          },
+          {
+            "block": 26,
+            "type": "natural"
+          },
+          {
+            "block": 27,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "15": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.6461
+          },
+          {
+            "step": 9,
+            "p": 0.9661
+          },
+          {
+            "step": 16,
+            "p": 0.5652
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "natural"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "16": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.5421
+          },
+          {
+            "step": 9,
+            "p": 0.996
+          },
+          {
+            "step": 22,
+            "p": 0.919
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "natural"
+          },
+          {
+            "block": 19,
+            "type": "natural"
+          },
+          {
+            "block": 22,
+            "type": "boundary"
+          },
+          {
+            "block": 27,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "17": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.8561
+          },
+          {
+            "step": 9,
+            "p": 0.7989
+          },
+          {
+            "step": 16,
+            "p": 0.7953
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "natural"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "natural"
+          },
+          {
+            "block": 26,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "18": [
+      {
+        "fires": [
+          {
+            "step": 7,
+            "p": 0.7326
+          },
+          {
+            "step": 17,
+            "p": 0.7521
+          },
+          {
+            "step": 22,
+            "p": 0.7971
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 7,
+            "type": "boundary"
+          },
+          {
+            "block": 12,
+            "type": "natural"
+          },
+          {
+            "block": 17,
+            "type": "boundary"
+          },
+          {
+            "block": 22,
+            "type": "boundary"
+          },
+          {
+            "block": 27,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "19": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.5409
+          },
+          {
+            "step": 13,
+            "p": 0.9156
+          },
+          {
+            "step": 18,
+            "p": 0.9858
+          },
+          {
+            "step": 23,
+            "p": 0.9301
+          },
+          {
+            "step": 29,
+            "p": 0.6788
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 13,
+            "type": "boundary"
+          },
+          {
+            "block": 18,
+            "type": "boundary"
+          },
+          {
+            "block": 23,
+            "type": "boundary"
+          },
+          {
+            "block": 28,
+            "type": "natural"
+          },
+          {
+            "block": 29,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "20": [
+      {
+        "fires": [],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 10,
+            "type": "natural"
+          },
+          {
+            "block": 15,
+            "type": "natural"
+          },
+          {
+            "block": 20,
+            "type": "natural"
+          },
+          {
+            "block": 25,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "21": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.9538
+          },
+          {
+            "step": 8,
+            "p": 0.5881
+          },
+          {
+            "step": 13,
+            "p": 0.9731
+          },
+          {
+            "step": 25,
+            "p": 0.5174
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "boundary"
+          },
+          {
+            "block": 13,
+            "type": "boundary"
+          },
+          {
+            "block": 18,
+            "type": "natural"
+          },
+          {
+            "block": 23,
+            "type": "natural"
+          },
+          {
+            "block": 25,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "22": [
+      {
+        "fires": [
+          {
+            "step": 4,
+            "p": 0.8829
+          },
+          {
+            "step": 11,
+            "p": 0.9942
+          },
+          {
+            "step": 28,
+            "p": 0.5294
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 4,
+            "type": "boundary"
+          },
+          {
+            "block": 9,
+            "type": "natural"
+          },
+          {
+            "block": 11,
+            "type": "boundary"
+          },
+          {
+            "block": 16,
+            "type": "natural"
+          },
+          {
+            "block": 21,
+            "type": "natural"
+          },
+          {
+            "block": 26,
+            "type": "natural"
+          },
+          {
+            "block": 28,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "23": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.8971
+          },
+          {
+            "step": 9,
+            "p": 0.6916
+          },
+          {
+            "step": 17,
+            "p": 0.6358
+          },
+          {
+            "step": 22,
+            "p": 0.927
+          },
+          {
+            "step": 28,
+            "p": 0.7575
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "natural"
+          },
+          {
+            "block": 17,
+            "type": "boundary"
+          },
+          {
+            "block": 22,
+            "type": "boundary"
+          },
+          {
+            "block": 27,
+            "type": "natural"
+          },
+          {
+            "block": 28,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "24": [
+      {
+        "fires": [
+          {
+            "step": 6,
+            "p": 0.7005
+          },
+          {
+            "step": 12,
+            "p": 0.993
+          },
+          {
+            "step": 17,
+            "p": 0.8403
+          },
+          {
+            "step": 22,
+            "p": 0.6203
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 6,
+            "type": "boundary"
+          },
+          {
+            "block": 11,
+            "type": "natural"
+          },
+          {
+            "block": 12,
+            "type": "boundary"
+          },
+          {
+            "block": 17,
+            "type": "boundary"
+          },
+          {
+            "block": 22,
+            "type": "boundary"
+          },
+          {
+            "block": 27,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "25": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.6708
+          },
+          {
+            "step": 11,
+            "p": 0.6826
+          },
+          {
+            "step": 19,
+            "p": 0.5412
+          },
+          {
+            "step": 24,
+            "p": 0.7232
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 11,
+            "type": "boundary"
+          },
+          {
+            "block": 16,
+            "type": "natural"
+          },
+          {
+            "block": 19,
+            "type": "boundary"
+          },
+          {
+            "block": 24,
+            "type": "boundary"
+          },
+          {
+            "block": 29,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "26": [
+      {
+        "fires": [
+          {
+            "step": 9,
+            "p": 0.6576
+          },
+          {
+            "step": 14,
+            "p": 0.9812
+          },
+          {
+            "step": 25,
+            "p": 0.5341
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "boundary"
+          },
+          {
+            "block": 19,
+            "type": "natural"
+          },
+          {
+            "block": 24,
+            "type": "natural"
+          },
+          {
+            "block": 25,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "27": [
+      {
+        "fires": [
+          {
+            "step": 5,
+            "p": 0.5964
+          },
+          {
+            "step": 11,
+            "p": 0.9435
+          },
+          {
+            "step": 16,
+            "p": 0.6877
+          },
+          {
+            "step": 21,
+            "p": 0.9766
+          },
+          {
+            "step": 26,
+            "p": 0.9862
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "boundary"
+          },
+          {
+            "block": 10,
+            "type": "natural"
+          },
+          {
+            "block": 11,
+            "type": "boundary"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "boundary"
+          },
+          {
+            "block": 26,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "28": [
+      {
+        "fires": [
+          {
+            "step": 5,
+            "p": 0.8332
+          },
+          {
+            "step": 10,
+            "p": 0.8126
+          },
+          {
+            "step": 15,
+            "p": 0.945
+          },
+          {
+            "step": 20,
+            "p": 0.5167
+          },
+          {
+            "step": 25,
+            "p": 0.8833
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "boundary"
+          },
+          {
+            "block": 10,
+            "type": "boundary"
+          },
+          {
+            "block": 15,
+            "type": "boundary"
+          },
+          {
+            "block": 20,
+            "type": "boundary"
+          },
+          {
+            "block": 25,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "29": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.7189
+          },
+          {
+            "step": 11,
+            "p": 0.9254
+          },
+          {
+            "step": 16,
+            "p": 0.917
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 11,
+            "type": "boundary"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "natural"
+          },
+          {
+            "block": 26,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "30": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.8622
+          },
+          {
+            "step": 9,
+            "p": 0.5086
+          },
+          {
+            "step": 16,
+            "p": 0.6343
+          },
+          {
+            "step": 29,
+            "p": 0.9406
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "natural"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "natural"
+          },
+          {
+            "block": 26,
+            "type": "natural"
+          },
+          {
+            "block": 29,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "31": [
+      {
+        "fires": [
+          {
+            "step": 6,
+            "p": 0.7934
+          },
+          {
+            "step": 16,
+            "p": 0.995
+          },
+          {
+            "step": 21,
+            "p": 0.7793
+          },
+          {
+            "step": 28,
+            "p": 0.9007
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 6,
+            "type": "boundary"
+          },
+          {
+            "block": 11,
+            "type": "natural"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "boundary"
+          },
+          {
+            "block": 26,
+            "type": "natural"
+          },
+          {
+            "block": 28,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "32": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.9122
+          },
+          {
+            "step": 9,
+            "p": 0.852
+          },
+          {
+            "step": 14,
+            "p": 0.9796
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "33": [
+      {
+        "fires": [
+          {
+            "step": 19,
+            "p": 0.9435
+          },
+          {
+            "step": 25,
+            "p": 0.7577
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 10,
+            "type": "natural"
+          },
+          {
+            "block": 15,
+            "type": "natural"
+          },
+          {
+            "block": 19,
+            "type": "boundary"
+          },
+          {
+            "block": 24,
+            "type": "natural"
+          },
+          {
+            "block": 25,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "34": [
+      {
+        "fires": [
+          {
+            "step": 5,
+            "p": 0.9472
+          },
+          {
+            "step": 19,
+            "p": 0.9093
+          },
+          {
+            "step": 25,
+            "p": 0.5705
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "boundary"
+          },
+          {
+            "block": 10,
+            "type": "natural"
+          },
+          {
+            "block": 15,
+            "type": "natural"
+          },
+          {
+            "block": 19,
+            "type": "boundary"
+          },
+          {
+            "block": 24,
+            "type": "natural"
+          },
+          {
+            "block": 25,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "35": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.9802
+          },
+          {
+            "step": 8,
+            "p": 0.6587
+          },
+          {
+            "step": 13,
+            "p": 0.9524
+          },
+          {
+            "step": 18,
+            "p": 0.761
+          },
+          {
+            "step": 24,
+            "p": 0.9988
+          },
+          {
+            "step": 29,
+            "p": 0.6411
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "boundary"
+          },
+          {
+            "block": 13,
+            "type": "boundary"
+          },
+          {
+            "block": 18,
+            "type": "boundary"
+          },
+          {
+            "block": 23,
+            "type": "natural"
+          },
+          {
+            "block": 24,
+            "type": "boundary"
+          },
+          {
+            "block": 29,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "36": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.9689
+          },
+          {
+            "step": 11,
+            "p": 0.6534
+          },
+          {
+            "step": 17,
+            "p": 0.8279
+          },
+          {
+            "step": 28,
+            "p": 0.6494
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 11,
+            "type": "boundary"
+          },
+          {
+            "block": 16,
+            "type": "natural"
+          },
+          {
+            "block": 17,
+            "type": "boundary"
+          },
+          {
+            "block": 22,
+            "type": "natural"
+          },
+          {
+            "block": 27,
+            "type": "natural"
+          },
+          {
+            "block": 28,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "37": [
+      {
+        "fires": [
+          {
+            "step": 7,
+            "p": 0.5396
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 7,
+            "type": "boundary"
+          },
+          {
+            "block": 12,
+            "type": "natural"
+          },
+          {
+            "block": 17,
+            "type": "natural"
+          },
+          {
+            "block": 22,
+            "type": "natural"
+          },
+          {
+            "block": 27,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "38": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.6538
+          },
+          {
+            "step": 10,
+            "p": 0.9959
+          },
+          {
+            "step": 15,
+            "p": 0.9895
+          },
+          {
+            "step": 21,
+            "p": 0.6595
+          },
+          {
+            "step": 26,
+            "p": 0.5621
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 10,
+            "type": "boundary"
+          },
+          {
+            "block": 15,
+            "type": "boundary"
+          },
+          {
+            "block": 20,
+            "type": "natural"
+          },
+          {
+            "block": 21,
+            "type": "boundary"
+          },
+          {
+            "block": 26,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "39": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.5475
+          },
+          {
+            "step": 8,
+            "p": 0.6002
+          },
+          {
+            "step": 14,
+            "p": 0.908
+          },
+          {
+            "step": 20,
+            "p": 0.6622
+          },
+          {
+            "step": 25,
+            "p": 0.879
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "boundary"
+          },
+          {
+            "block": 13,
+            "type": "natural"
+          },
+          {
+            "block": 14,
+            "type": "boundary"
+          },
+          {
+            "block": 19,
+            "type": "natural"
+          },
+          {
+            "block": 20,
+            "type": "boundary"
+          },
+          {
+            "block": 25,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "40": [
+      {
+        "fires": [
+          {
+            "step": 4,
+            "p": 0.7086
+          },
+          {
+            "step": 11,
+            "p": 0.9728
+          },
+          {
+            "step": 16,
+            "p": 0.978
+          },
+          {
+            "step": 23,
+            "p": 0.7691
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 4,
+            "type": "boundary"
+          },
+          {
+            "block": 9,
+            "type": "natural"
+          },
+          {
+            "block": 11,
+            "type": "boundary"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "natural"
+          },
+          {
+            "block": 23,
+            "type": "boundary"
+          },
+          {
+            "block": 28,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "41": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.927
+          },
+          {
+            "step": 8,
+            "p": 0.771
+          },
+          {
+            "step": 13,
+            "p": 0.6164
+          },
+          {
+            "step": 18,
+            "p": 0.7532
+          },
+          {
+            "step": 23,
+            "p": 0.5604
+          },
+          {
+            "step": 28,
+            "p": 0.9904
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "boundary"
+          },
+          {
+            "block": 13,
+            "type": "boundary"
+          },
+          {
+            "block": 18,
+            "type": "boundary"
+          },
+          {
+            "block": 23,
+            "type": "boundary"
+          },
+          {
+            "block": 28,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "42": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.9269
+          },
+          {
+            "step": 8,
+            "p": 0.942
+          },
+          {
+            "step": 13,
+            "p": 0.9983
+          },
+          {
+            "step": 20,
+            "p": 0.9613
+          },
+          {
+            "step": 25,
+            "p": 0.6551
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "boundary"
+          },
+          {
+            "block": 13,
+            "type": "boundary"
+          },
+          {
+            "block": 18,
+            "type": "natural"
+          },
+          {
+            "block": 20,
+            "type": "boundary"
+          },
+          {
+            "block": 25,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "43": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.8693
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "44": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.8657
+          },
+          {
+            "step": 9,
+            "p": 0.7071
+          },
+          {
+            "step": 15,
+            "p": 0.8882
+          },
+          {
+            "step": 22,
+            "p": 0.9989
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "natural"
+          },
+          {
+            "block": 9,
+            "type": "boundary"
+          },
+          {
+            "block": 14,
+            "type": "natural"
+          },
+          {
+            "block": 15,
+            "type": "boundary"
+          },
+          {
+            "block": 20,
+            "type": "natural"
+          },
+          {
+            "block": 22,
+            "type": "boundary"
+          },
+          {
+            "block": 27,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "45": [
+      {
+        "fires": [
+          {
+            "step": 3,
+            "p": 0.7436
+          },
+          {
+            "step": 8,
+            "p": 0.7845
+          },
+          {
+            "step": 13,
+            "p": 0.8203
+          },
+          {
+            "step": 18,
+            "p": 0.9762
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 3,
+            "type": "boundary"
+          },
+          {
+            "block": 8,
+            "type": "boundary"
+          },
+          {
+            "block": 13,
+            "type": "boundary"
+          },
+          {
+            "block": 18,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "46": [
+      {
+        "fires": [
+          {
+            "step": 4,
+            "p": 0.9413
+          },
+          {
+            "step": 10,
+            "p": 0.8818
+          },
+          {
+            "step": 24,
+            "p": 0.768
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 4,
+            "type": "boundary"
+          },
+          {
+            "block": 9,
+            "type": "natural"
+          },
+          {
+            "block": 10,
+            "type": "boundary"
+          },
+          {
+            "block": 15,
+            "type": "natural"
+          },
+          {
+            "block": 20,
+            "type": "natural"
+          },
+          {
+            "block": 24,
+            "type": "boundary"
+          },
+          {
+            "block": 29,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "47": [
+      {
+        "fires": [
+          {
+            "step": 6,
+            "p": 0.8699
+          },
+          {
+            "step": 12,
+            "p": 0.6883
+          },
+          {
+            "step": 17,
+            "p": 0.986
+          },
+          {
+            "step": 22,
+            "p": 0.9923
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 6,
+            "type": "boundary"
+          },
+          {
+            "block": 11,
+            "type": "natural"
+          },
+          {
+            "block": 12,
+            "type": "boundary"
+          },
+          {
+            "block": 17,
+            "type": "boundary"
+          },
+          {
+            "block": 22,
+            "type": "boundary"
+          },
+          {
+            "block": 27,
+            "type": "natural"
+          }
+        ]
+      }
+    ],
+    "48": [
+      {
+        "fires": [
+          {
+            "step": 4,
+            "p": 0.92
+          },
+          {
+            "step": 11,
+            "p": 0.7559
+          },
+          {
+            "step": 19,
+            "p": 0.6012
+          },
+          {
+            "step": 26,
+            "p": 0.788
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 4,
+            "type": "boundary"
+          },
+          {
+            "block": 9,
+            "type": "natural"
+          },
+          {
+            "block": 11,
+            "type": "boundary"
+          },
+          {
+            "block": 16,
+            "type": "natural"
+          },
+          {
+            "block": 19,
+            "type": "boundary"
+          },
+          {
+            "block": 24,
+            "type": "natural"
+          },
+          {
+            "block": 26,
+            "type": "boundary"
+          }
+        ]
+      }
+    ],
+    "49": [
+      {
+        "fires": [
+          {
+            "step": 7,
+            "p": 0.5345
+          },
+          {
+            "step": 16,
+            "p": 0.5214
+          },
+          {
+            "step": 21,
+            "p": 0.5044
+          }
+        ],
+        "replans": [
+          {
+            "block": 0,
+            "type": "natural"
+          },
+          {
+            "block": 5,
+            "type": "natural"
+          },
+          {
+            "block": 7,
+            "type": "boundary"
+          },
+          {
+            "block": 12,
+            "type": "natural"
+          },
+          {
+            "block": 16,
+            "type": "boundary"
+          },
+          {
+            "block": 21,
+            "type": "boundary"
+          },
+          {
+            "block": 26,
+            "type": "natural"
+          }
+        ]
+      }
+    ]
+  }
+}
