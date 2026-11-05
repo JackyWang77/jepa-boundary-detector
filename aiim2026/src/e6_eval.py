@@ -127,6 +127,24 @@ def run(cfg: DictConfig):
             arm=arm, interval=cfg.get('interval', 4),
             **head_cfg,
         )
+    elif arm == 'probe_t':
+        from probe_t_policy import ProbeTPolicy
+        feats_meta = json.load(
+            open(SRC.parent / 'features' / 'meta.json'))
+        r2m = json.load(
+            open(SRC.parent / 'models' / 'r2_meta_dual.json'))
+        policy = ProbeTPolicy(
+            solver=solver, config=config, process=process,
+            transform=transform, model=model,
+            head_ckpt=r2m['head_ckpt'],
+            channels=r2m['channels'],
+            feat_mu=r2m['feat_mu'], feat_sd=r2m['feat_sd'],
+            fz_path=r2m.get('fz_ckpt',
+                            str(SRC.parent / 'models' / 'fz_dual_linear.npy')),
+            tau=r2m['tau'], refractory=r2m['refractory'],
+            action_mean=feats_meta['action_mean'],
+            action_std=feats_meta['action_std_plus_eps'],
+        )
     else:
         policy = swm.policy.WorldModelPolicy(
             solver=solver, config=config, process=process,

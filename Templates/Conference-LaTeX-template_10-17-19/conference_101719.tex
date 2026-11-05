@@ -11,7 +11,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Label-Free Boundary Detection for Rollout in Frozen JEPA World Models}
+\title{Latent Boundary Detection for Rollout Re-Anchoring in Frozen JEPA World Models}
 
 \author{\IEEEauthorblockN{Jiaqi Wang}
 \IEEEauthorblockA{\textit{School of Mechanical and Electrical Engineering} \\
@@ -33,14 +33,44 @@ Guangzhou, China \\
 \end{abstract}
 
 \begin{IEEEkeywords}
-world models, change-point detection, model-based planning, representation learning
+artificial intelligence, world models,  representation learning
 \end{IEEEkeywords}
 
 \section{Introduction}
-% TODO: Intro 三段式
-% 1) 长距离规划中世界模型 rollout 漂移，冻结模型尤甚（Mind the Gap 数字：d=25/50/75 成功率衰减）
-% 2) 现有分层方案需要训练额外模块；我们问：冻结模型自身潜空间里是否已有足够的边界信息
-% 3) 贡献：三路通用特征 + 无监督变点切分 + 轻量检测头 + 边界触发停止重锚，全部零任务规则
+An agent that acts in the world benefits from predicting the consequences of its actions, and
+world models are learned for this purpose~\cite{lecun2022path}. Joint-Embedding Predictive
+Architectures (JEPA) are a family of world models that predict latent embeddings instead of raw
+pixels, which avoids pixel reconstruction and keeps the model lightweight. Such models have
+been applied to image and video understanding (I-JEPA~\cite{assran2023ijepa}, V-JEPA~\cite{vjepa2024})
+and to robot control, where LeWM pairs the predictive model with a sampling-based planner
+that rolls out candidate action sequences in imagination and executes the best one, as in
+model predictive control~\cite{lewm2026}. Yet rollouts of a frozen world model drift from the
+real dynamics, and the error grows with every imagined step, so planning success falls with
+task distance on PushT~\cite{mindthegap2026}.
+
+To solve this problem, hierarchical planners such as H-JEPA plan at multiple timescales, but
+an extra model must be trained end-to-end on top of the world model~\cite{hjepa2026}. Subgoal
+planners shorten the effective horizon, but the subgoals they generate can be spurious and can
+lower success~\cite{mindthegap2026}. A question remains: can boundary information replace
+subgoals in keeping the rollout error small? If it can, knowing when to stop a rollout and
+when to re-anchor it is enough.
+
+To answer this question, a latent boundary detector is built. Three generic signals of the
+latent stream are measured. Increment energy reflects the magnitude of the latent change.
+Direction change reflects turns of the latent trajectory. Prediction novelty reflects the
+mismatch between the predicted next state and the observed one. These signals are segmented
+offline with an unsupervised changepoint method~\cite{killick2012pelt}, and the segmentation
+is distilled into a lightweight causal head. During planning, the head
+reads the imagined rollout stream and the real observation stream. A boundary event stops the
+current plan and forces an immediate re-anchoring. The contributions are:
+\begin{itemize}
+\item A paired-task study verifying that the timing of stopping and re-anchoring controls
+planning success in frozen world models.
+\item A latent boundary detector (${\sim}3$k parameters) that decides when to stop a
+rollout and re-anchor it, without task rules and without retraining the world model.
+\item An evaluation on PushT and OGB Cube against flat and fixed-interval baselines.
+\end{itemize}
+
 
 \section{Related Work}
 % TODO: 三块
@@ -66,25 +96,29 @@ world models, change-point detection, model-based planning, representation learn
 % Table I: 检测消融 + 物理事件对齐 F1（特征递增 / 切分方法 / 头部）
 % Table II: 三臂成功率主表（平坦 vs 边界停止 vs 等频率停止, d=25/50/75）
 
+% 手动管理：条目顺序 = 正文首次引用顺序（IEEE 规范）。
+% 后续每新增一条引用，把 \bibitem 追加到列表末尾，不要插到中间。
 \begin{thebibliography}{00}
-
-\bibitem{lewm2026} L. Maes, Q. Le Lidec, D. Scieur, Y. LeCun, and R. Balestriero, ``LeWorldModel: Stable end-to-end joint-embedding predictive architecture from pixels,'' arXiv preprint arXiv:2603.19312, 2026.
-
-\bibitem{mindthegap2026} N. Caselli, F. Massafra, S. Punzo, S. Lo Sardo, I. Pantelidis, and S. K. Bhethanabhotla, ``Mind the gap: Promises and pitfalls of hierarchical planning in LeWorldModel,'' arXiv preprint arXiv:2607.12547, 2026.
 
 \bibitem{lecun2022path} Y. LeCun, ``A path towards autonomous machine intelligence,'' OpenReview, version 0.9.2, 2022.
 
 \bibitem{assran2023ijepa} M. Assran, Q. Duval, I. Misra, P. Bojanowski, P. Vincent, M. Rabbat, Y. LeCun, and N. Ballas, ``Self-supervised learning from images with a joint-embedding predictive architecture,'' in Proc. IEEE/CVF Conf. Comput. Vis. Pattern Recognit. (CVPR), 2023, pp. 15619--15629.
 
+\bibitem{vjepa2024} A. Bardes, Q. Garrido, J. Ponce, X. Chen, M. Rabbat, Y. LeCun, M. Assran, and N. Ballas, ``Revisiting feature prediction for learning visual representations from video,'' in Proc. Int. Conf. Mach. Learn. (ICML), 2024.
+
+\bibitem{lewm2026} L. Maes, Q. Le Lidec, D. Scieur, Y. LeCun, and R. Balestriero, ``LeWorldModel: Stable end-to-end joint-embedding predictive architecture from pixels,'' arXiv preprint arXiv:2603.19312, 2026.
+
 \bibitem{hjepa2026} W. Zhang, B. Terver, M. Rabbat, Y. LeCun, and R. Balestriero, ``H-JEPA: End-to-end learning of hierarchical world models for visual planning,'' arXiv preprint arXiv:2610.06805, 2026.
+
+\bibitem{mindthegap2026} N. Caselli, F. Massafra, S. Punzo, S. Lo Sardo, I. Pantelidis, and S. K. Bhethanabhotla, ``Mind the gap: Promises and pitfalls of hierarchical planning in LeWorldModel,'' arXiv preprint arXiv:2607.12547, 2026.
+
+\bibitem{killick2012pelt} R. Killick, P. Fearnhead, and I. A. Eckley, ``Optimal detection of changepoints with a linear computational cost,'' J. Amer. Statist. Assoc., vol. 107, no. 500, pp. 1590--1598, 2012.
 
 \bibitem{pace2026} J. Nie, J. Li, C. Liu, J. Lao, J. Zhang, T. Zhang, L. Lin, and S. Huang, ``PACE: Phase-aware chunk execution for robot policies with action chunking,'' arXiv preprint arXiv:2606.00537, 2026.
 
 \bibitem{autohorizon2026} H. Wang, G. Zhang, Y. Yan, R. R. Kompella, and G. Liu, ``VLA knows its limits: Adaptive execution horizons for robot policies,'' in Proc. Eur. Conf. Comput. Vis. (ECCV), 2026.
 
 \bibitem{page1954cusum} E. S. Page, ``Continuous inspection schemes,'' Biometrika, vol. 41, no. 1/2, pp. 100--115, 1954.
-
-\bibitem{killick2012pelt} R. Killick, P. Fearnhead, and I. A. Eckley, ``Optimal detection of changepoints with a linear computational cost,'' J. Amer. Statist. Assoc., vol. 107, no. 500, pp. 1590--1598, 2012.
 
 \bibitem{adams2007bocpd} R. P. Adams and D. J. C. MacKay, ``Bayesian online changepoint detection,'' arXiv preprint arXiv:0710.3742, 2007.
 

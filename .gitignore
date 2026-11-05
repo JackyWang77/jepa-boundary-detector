@@ -5,6 +5,7 @@ aiim2026/external/
 # 大产物（可重算；判读结果均在 runs/*.json、results/ 里）
 aiim2026/runs/*.png
 aiim2026/runs/*.npz
+aiim2026/runs/*.log
 
 # 常规
 __pycache__/

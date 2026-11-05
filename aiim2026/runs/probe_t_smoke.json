@@ -1,0 +1,142 @@
+{
+  "arm": "probe_t",
+  "goal_offset_steps": 75,
+  "eval_budget": 150,
+  "seed": 42,
+  "interval": 0,
+  "success_rate": 0.0,
+  "episode_successes": [
+    false,
+    false
+  ],
+  "replan_logs": {
+    "0": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 5,
+            "pmax": 0.51
+          },
+          {
+            "block": 10,
+            "T": 15,
+            "pmax": 0.2658
+          },
+          {
+            "block": 15,
+            "T": 5,
+            "pmax": 0.943
+          },
+          {
+            "block": 20,
+            "T": 5,
+            "pmax": 0.7393
+          },
+          {
+            "block": 25,
+            "T": 5,
+            "pmax": 0.6745
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.51
+          },
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 15,
+            "p": 0.2658
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.943
+          },
+          {
+            "block": 20,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7393
+          },
+          {
+            "block": 25,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6745
+          }
+        ],
+        "fires": []
+      }
+    ],
+    "1": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 5,
+            "pmax": 0.8865
+          },
+          {
+            "block": 10,
+            "T": 5,
+            "pmax": 0.7934
+          },
+          {
+            "block": 15,
+            "T": 5,
+            "pmax": 0.6986
+          },
+          {
+            "block": 20,
+            "T": 5,
+            "pmax": 0.6026
+          },
+          {
+            "block": 25,
+            "T": 15,
+            "pmax": 0.2631
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.8865
+          },
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7934
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6986
+          },
+          {
+            "block": 20,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6026
+          },
+          {
+            "block": 25,
+            "type": "probe_t",
+            "T": 15,
+            "p": 0.2631
+          }
+        ],
+        "fires": []
+      }
+    ]
+  }
+}
