@@ -109,6 +109,57 @@ def kinematic_events(state):
     return push_onset, settle
 
 
+# --- cube (OGB) event constants: calibrated 2026-11-05 on the 500 local
+# oracle episodes (see runs/cube_event_thresh.json). Block jitter floor is
+# < 1e-5 m/frame, deliberate motion is >= ~1e-3 m/frame; 5:1 onset:settle
+# threshold ratio kept as in PushT.
+CUBE_DISP = 5e-4      # block displacement threshold per step (m)
+CUBE_RUN = 2          # sustained steps to call manip onset
+CUBE_SETTLE_DISP = 1e-4   # displacement below which block counts as parked
+CUBE_SETTLE_RUN = 3       # sustained quiet steps to call settle
+
+
+def ogb_cube_events(block_pos):
+    """Reference events from the cube's own motion (task-scoped twin of
+    kinematic_events above; the PushT path is untouched).
+
+    manip_onset: block displacement > CUBE_DISP for >= CUBE_RUN steps.
+    settle:      after a motion run, displacement < CUBE_SETTLE_DISP for
+                 >= CUBE_SETTLE_RUN consecutive steps (first quiet frame).
+    Event arrays are indexed by frame; caller aligns frame t -> feature
+    index t-1 (same convention as kinematic_events)."""
+    T = len(block_pos)
+    disp = np.concatenate(
+        [[0.0], np.linalg.norm(np.diff(block_pos[:, :3], axis=0), axis=1)])
+    manip_onset = np.zeros(T, bool)
+    settle = np.zeros(T, bool)
+    moving = disp > CUBE_DISP
+    t = 0
+    while t < T:
+        if moving[t]:
+            j = t
+            while j < T and moving[j]:
+                j += 1
+            if j - t >= CUBE_RUN:
+                manip_onset[t] = True
+                k, quiet, first_quiet = j, 0, None
+                while k < T:
+                    if disp[k] < CUBE_SETTLE_DISP:
+                        quiet += 1
+                        if quiet == 1:
+                            first_quiet = k
+                        if quiet >= CUBE_SETTLE_RUN:
+                            settle[first_quiet] = True
+                            break
+                    else:
+                        quiet = 0
+                    k += 1
+            t = j
+        else:
+            t += 1
+    return manip_onset, settle
+
+
 def moving_avg(x, w):
     if len(x) < w:
         return x.copy()

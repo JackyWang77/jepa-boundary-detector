@@ -1,0 +1,35 @@
+{
+  "pusht": {
+    "eps": 100,
+    "events_per_ep_median": 3.0,
+    "n": 234,
+    "mean": 31.299145299145298,
+    "median": 29.0,
+    "std": 20.316834397938255,
+    "var": 412.7737599532471,
+    "cv": 0.6491178657997749,
+    "p95_over_median": 2.413793103448276,
+    "log_var": 0.6157873621613943
+  },
+  "cube": {
+    "eps": 500,
+    "events_per_ep_median": 1.0,
+    "n": 255,
+    "mean": 25.84313725490196,
+    "median": 24.0,
+    "std": 13.368345035237574,
+    "var": 178.71264898116112,
+    "cv": 0.5172880097094964,
+    "p95_over_median": 2.2916666666666665,
+    "log_var": 0.3361584252434537
+  },
+  "log_dispersion_ratio_cube_over_pusht": 0.5459001692784798,
+  "brown_forsythe_on_log_intervals": {
+    "stat": 24.407023707235396,
+    "p": 1.0739585812539983e-06
+  },
+  "cv_gt": false,
+  "dispersion_gt": false,
+  "units": "raw frames (model step = raw/5, FS=5 both tasks)",
+  "verdict": "FAIL"
+}

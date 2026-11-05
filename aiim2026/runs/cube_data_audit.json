@@ -1,0 +1,27 @@
+{
+  "n_episodes": 500,
+  "total_steps": 100500,
+  "ep_len": {
+    "min": 201,
+    "max": 201,
+    "mean": 201.0
+  },
+  "goal_offset_unit": "raw_frames (e6_eval.py: step_idx direct, no FS scaling)",
+  "start_pools": {
+    "5": 97500,
+    "10": 95000,
+    "15": 92500,
+    "25": 87500,
+    "50": 75000,
+    "75": 62500
+  },
+  "pool_gate_ge50": {
+    "5": true,
+    "10": true,
+    "15": true,
+    "25": true,
+    "50": true,
+    "75": true
+  },
+  "all_gates_pass": true
+}

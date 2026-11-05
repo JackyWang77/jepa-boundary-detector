@@ -33,6 +33,16 @@ sys.path.insert(0, str(SRC))
 from boundary_policy import BoundaryPolicy
 
 SWM_PLAN = SRC.parent / 'third_party' / 'stable-worldmodel' / 'scripts' / 'plan'
+MODELS_DIR = SRC.parent / 'models'
+
+
+def localize_ckpt_paths(meta):
+    """r2_meta*.json record absolute paths from the training machine; on
+    any other box fall back to the same basename under models/."""
+    for key in ('head_ckpt', 'fz_ckpt'):
+        if key in meta and not Path(meta[key]).exists():
+            meta[key] = str(MODELS_DIR / Path(meta[key]).name)
+    return meta
 
 
 def img_transform(cfg, dtype=torch.float32):
@@ -110,8 +120,8 @@ def run(cfg: DictConfig):
             open(SRC.parent / 'features' / 'meta.json'))
         head_cfg = {}
         if arm == 'boundary':
-            r2m = json.load(
-                open(SRC.parent / 'models' / 'r2_meta.json'))
+            r2m = localize_ckpt_paths(
+                json.load(open(SRC.parent / 'models' / 'r2_meta.json')))
             head_cfg = dict(
                 head_ckpt=r2m['head_ckpt'],
                 head_class=r2m['head_class'],
@@ -131,8 +141,8 @@ def run(cfg: DictConfig):
         from probe_t_policy import ProbeTPolicy
         feats_meta = json.load(
             open(SRC.parent / 'features' / 'meta.json'))
-        r2m = json.load(
-            open(SRC.parent / 'models' / 'r2_meta_dual.json'))
+        r2m = localize_ckpt_paths(
+            json.load(open(SRC.parent / 'models' / 'r2_meta_dual.json')))
         policy = ProbeTPolicy(
             solver=solver, config=config, process=process,
             transform=transform, model=model,
