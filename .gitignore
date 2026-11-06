@@ -15,3 +15,6 @@ __pycache__/
 
 external/
 outputs/
+
+# 论文只在 mac 本机写，不上传（用户裁决 2026-11-06）
+Templates/
