@@ -6,6 +6,21 @@ aiim2026/external/
 aiim2026/runs/*.png
 aiim2026/runs/*.npz
 aiim2026/runs/*.log
+aiim2026/runs/*.json
+aiim2026/runs/videos_*/
+
+# 实验结果数据文件（4060 本地生成，不上传）
+*.js
+*dashboard.html
+
+# 模型权重和 checkpoint
+aiim2026/models/*.pt
+aiim2026/checkpoints/
+
+# 数据集
+aiim2026/datasets/
+*.h5
+*.zst
 
 # 常规
 __pycache__/

@@ -193,7 +193,7 @@ def run(cfg: DictConfig):
         episodes_idx=eval_episodes.tolist(),
         callables=OmegaConf.to_container(
             cfg.eval.get('callables'), resolve=True),
-        video=None,
+        video=cfg.get('video_dir', None),
     )
     print(metrics)
 
