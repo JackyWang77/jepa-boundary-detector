@@ -66,8 +66,12 @@ def run(cfg: DictConfig):
     # Only the executed part of a plan must fit the budget. With the
     # decoupled arm (horizon=15, receding=5) the plan is longer than the
     # receding exec length on purpose; the tail is warm-start material.
-    assert (cfg.plan_config.receding_horizon
-            * cfg.plan_config.action_block <= cfg.eval.eval_budget)
+    # NOTE: downgraded to warning — flat(15,15)·d25 has receding*action_block=75
+    # vs budget=50, meaning "plan once, execute to end with no replan". Valid data.
+    _recede_exec = cfg.plan_config.receding_horizon * cfg.plan_config.action_block
+    if _recede_exec > cfg.eval.eval_budget:
+        print(f"[WARN] receding_exec={_recede_exec} > budget={cfg.eval.eval_budget} "
+              f"→ no replan will happen within budget window (plan-once arm)")
 
     cfg.world.max_episode_steps = 2 * cfg.eval.eval_budget
     world = swm.World(**cfg.world, image_shape=(224, 224))

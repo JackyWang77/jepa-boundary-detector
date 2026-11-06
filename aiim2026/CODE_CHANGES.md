@@ -34,6 +34,16 @@
 | [scan_black_eps.py](src/scan_black_eps.py) | 新增 | cube 本地 h5 黑帧扫描 |
 | [scan_black_eps_pusht.py](src/scan_black_eps_pusht.py) | 新增 | PushT 本地 h5 黑帧扫描 |
 
+## 2026-11-06 追加（d25 flat(15,15) 补跑）
+
+| 文件 | 类型 | 说明 |
+|------|------|------|
+| [e6_eval.py](src/e6_eval.py#L69) | 修改 | `receding_horizon × action_block > eval_budget` 由 assert 降级为 warning —— 允许 plan-once 臂（budget 内不重锚）合法执行 |
+| [run_flat15_d25.py](src/run_flat15_d25.py) | 新增 | flat(15,15)·d25 × 3 seeds × n=150 补跑（断言放开后） |
+| [peek_flat15.py](src/peek_flat15.py) | 新增 | 读 3 seed 结果并对比 d25 网格 |
+| [gen_dashboard_data.py](src/gen_dashboard_data.py) | 新增 | 由 runs/*.json 全量重生成 taskA/B/C/D_data.js（dashboard 数据源） |
+| [audit_official_cube.py](src/audit_official_cube.py) / [audit_cube_flat.py](src/audit_cube_flat.py) | 新增 | 官方 HF cube h5 解压 + 结构/黑帧/成功率/目标距离审计 |
+
 ## .gitignore 更新
 
 新增忽略规则（结果文件不上传，可由 runs/*.json 重算）：
