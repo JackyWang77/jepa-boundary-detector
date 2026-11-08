@@ -205,3 +205,34 @@ cube T' 遥测: d25 {5:11,6:52,7:26,8:7,9:3,10:1} fires/ep=0.33; d50 {6:37,7:35}
 3. d25 plan-once 是结构性边界: budget 只够一次规划时自适应机制无条件生效
 4. T+1 负消融: 立即截断优于延后一块, 截断时机设计已最优 (PushT 显著 p<0.01; cube 打平)
 5. 写作注意: T+1 与 cube 属探索性实验, 与预注册 H1/H2/H3 分开标注; PushT 主结果基于修复后 v2
+
+---
+## 2026-11-08 勘误 + 写作用口径 (最终)
+
+### 勘误: runs/archive_probe_v1_buggy 中 d25/d50 不可用
+run_taskD.py 写死 eval.eval_budget=150, 导致 v1 的 d25(budget 应为50)/d50(应为100) 多给 2-3 倍环境步:
+- v1 d25 = 73.8% (budget 150) -> 作废; v2 d25 = 38.2% (budget 50) 才是可比值
+- v1 d50 = 44.7% (budget 150) -> 作废; v2 d50 = 41.8% (budget 100)
+- v1 d75 = 24.2% (budget 150 = 2*75, 合法) -> 与 v2 d75 26.0% 可比, 差 +1.8pp = 纯 bug 修复贡献
+- flat 网格全部为 budget=2d (d25=50/d50=100/d75=150), 与 v2 probe 严格对齐
+- 反证: v1 d25 用 150 步只有 73.8, flat h5 只用 50 步就有 85.6 -> d25 的 probe 不是预算不足
+
+### d25 的写作口径 (合法, 非选择性报告)
+d25 对 probe 无鉴别力: budget=50 = 一个 10 块计划(h10 的 plan_len), 首帧 zc<3 探针不可用, 第二次规划周期不存在。
+但 d25 对 flat 有意义(85.6/45.6/6.2, 40pp 极差), 必须保留 -> flat 表全列 d25, probe 表只列 d50/d75 + 脚注给 38.2。
+英文措辞:
+"At d=25 the budget (50 env steps) equals a single 10-block plan, so the probe cannot be queried a second time; this setting has no discriminating power for the probe arm and is excluded from that comparison. We retain it in the fixed-horizon grid, where it shows the largest sensitivity to horizon (85.6% to 6.2% as h goes 5 to 15)."
+
+### 有效结果清单 (可直接引用)
+| 数据 | 目录/文件 | 状态 |
+|---|---|---|
+| PushT flat h5/10/15 x 3d x 3seed (n=150) | runs/flat_h*r*_d*_s*_n150.json (27) | 有效 |
+| PushT probe v2 x 3d x 3seed | runs/probe_t_hr_d*_s*_n150.json (9) | 有效 (主结果) |
+| PushT probe+T+1 (d25/d50 only) | runs/probe_t1_hr_d{25,50}_s*_n150.json (6) | 探索性负消融 |
+| PushT probe v1 | runs/archive_probe_v1_buggy | 仅 d75 可引 |
+| cube flat 27 / probe 9 / probe+T+1 9 | runs/cube_* | 有效 |
+
+### 三条可写结论
+1. 检测器两任务都学到真实事件时机: PushT T' 双峰 {5,10} (主值 58-62%), cube T' 峰 6-7 (36-52%), 均非退化 (H3 双过)
+2. 收益被任务节律调节: PushT 不规则节律下 probe 在 d50/d75 显著超固定 horizon; cube 极规律节律下 probe 净亏损 (d25 p=0.006, d75 p=0.0003)
+3. 立即截断最优: T+1 延后一块在 PushT 显著更差 (d25 p<0.0001, d50 p=0.0084), cube 打平 -> 截断时机无需调参
