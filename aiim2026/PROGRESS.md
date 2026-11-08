@@ -72,3 +72,136 @@
 2026-11-06 | **PushT 四 lane 全量汇总（A/B/C/D 全部落盘）** | **成功率全景（3 seeds 均值 n=450/arm）**：| d=25 | flat(5,5)=**85.6%** | flat(10,10)=45.6% | flat(15,15)=— | probe_t_hr=**73.8%** | d=50 | flat(5,5)=37.1% | flat(10,10)=34.9% | flat(15,15)=25.6% | probe_t_hr=**44.7%** | d=75 | flat(5,5)=20.9% | flat(10,10)=19.8% | flat(15,15)=15.1% | probe_t_hr=**24.2%** | **配对 McNemar pooled**：| d25 probe vs flat(5,5) [25:78] p<1e-6 ***（probe 在简单任务上劣于最优平坦臂，检测器"过度谨慎"）| d25 probe vs flat(10,10) [149:22] p<1e-6 ***（但远好于坏视野）| d50 probe vs flat(5,5) [81:47] p=0.0035 ** | d50 probe vs flat(10,10) [74:30] p<1e-4 *** | d75 probe vs flat(5,5) [48:33] p=0.12 ns | d75 probe vs flat(10,10) [35:15] p=0.0072 ** | **自动适配 claim 判读**：horizon 敏感场景（d25, Δh5-h10=40pp）probe 未选对最优 h=5 收短到 73.8% 而非 85.6%；horizon 不敏感场景（d50 Δ=2.2pp / d75 Δ=1.1pp）probe 全面超过所有平坦臂——**检测器在"视野选择影响大"时信息增益不足，但在"视野选择影响小"时自动收敛到稳健策略**。**T' 遥测（d75 n=3487 replans）**：57.8% 选 T=5 / 42.2% 选 T=10 / mean=7.11 / fires=2906（6.3/ep）——不是恒定退化 5 也非恒定 10，真正动态 | **Wall-clock**：probe 三 seed 总 925min vs flat(5,5) 1205min / flat(10,10) 1080min，省 23–14% 时间 | **速度-精度全景**：probe 在 d75 精度最高（24.2%）且 wall-clock 最低（925min）——**唯一同时满足高精度+低耗时的臂** | lane C cube 本地 h5 污染（57–72% 躺赢），判无效等官方 224 数据 | 原始 JSON：runs/probe_t_hr_d{25,50,75}_s{42,43,44}_n150.json + flat_h*_d*_s*_n150.json；汇总脚本 src/pushT_final_summary.py
 
 2026-11-06 | **d25 flat(15,15) plan-once 补跑（补齐 horizon 代价曲线第三点）+ dashboard 全量刷新** | 背景：d25 原判 flat(15,15) 结构性不可执行（receding 15 × action_block 5 = 75 > budget 50，e6_eval 断言拦截）；本轮断言降级为 warning 后补跑——该配置语义为 **plan-once**（CEM 只解 1 次 h=15 规划，预算 50 步内不重锚，日志 solves=1 已确认）。结果 n=150×3 seeds：s42 **7.33%**（11/150）/ s43 **6.67%**（10/150）/ s44 **4.67%**（7/150），mean **6.22%**，seed 极差 2.66pp。**d25 horizon 代价曲线补齐为单调三段**：flat(5,5) 85.56 → flat(10,10) 45.55 → flat(15,15) 6.22（每 +5 块掉 39-40pp）——证实"简单任务上重锚频率主导、不重锚即崩"，也解释 probe 在 d25 掉到 73.8% 的机制（该场景 h 选择代价 40pp 量级，检测器信息不足以分辨最短视野最优）。**dashboard**：runs_dashboard.html 修复被误删的历史文件（从 commit 0ddea51 恢复），数据由 runs/*.json 全量重生成——taskA_data.js（lane A d75 三角 12 runs）、taskB_data.js（lane B 27 runs，含新增 flat(15,15)·d25）、taskD_data.js（lane D 6 runs），并新增 lane D 卡片；生成脚本 src/gen_dashboard_data.py | 落盘：runs/flat_h15r15_d25_s{42,43,44}_n150.json；跑法脚本 src/run_flat15_d25.py
+
+2026-11-07 | **cube L1 吞吐事故定位 → n=150→100 + 单 worker + 卡死守卫（协议变更）** | 现象：n=150 下 9 个 run 只有 1 个正常结束（h5r5/d25/s42 = **74.7%**，solves 518s+275s），其余全在**第二次 CEM solve** 卡死 10h+。`py-spy dump` 显示主线程阻塞在 `cem.py:271`（`topk_vals.mean(dim=1).cpu().tolist()` 的 **device→host 同步拷贝**），此时 GPU util 99% 但**功耗仅 32–35 W**（正常 91 W），显存 6681→7175 MiB 持续爬升。定位：**与并发无关**（单 worker 同样卡死），根因是 **VRAM 触顶**——每个存活的 MuJoCo env 持有一个 GLFW renderer，n=150 峰值 ~7.2/8 GB，缓存分配器越过分页阈值后 D2H 拷贝**永久 stall**（WDDM 页迁移自旋）。修复：① **n_eval 150→100**（峰值 ~5 GB，留 3 GB 余量；实测 solves 158s+64s、全程 7 min）；② 并发锁 **1 worker**（n=100 单进程 ~5 GB，2 进程 10 GB > 8 GB）；③ `run_cube_grid.py` 加**卡死守卫**（日志 45 min 无增长即 kill，MAX_RETRY=2；非零退出码同样重试）；④ 关闭显示器休眠/待机（`powercfg /change *-timeout-ac 0`）。口径影响：cube 统计单位 = **100 eps × 3 seeds = 300 集/d**（PushT 为 150×3=450），McNemar 仍为配对设计；`cube_final_summary.py` 同步改 n100 | 改动：src/run_cube_grid.py, src/cube_final_summary.py
+
+2026-11-06 | **cube 任务重启（用户裁决：时机确定 ≠ 规划无意义）+ 检测器训练 PASS + L1/L3 启动** | 决策：cube 事件虽规律（原节律 gate 判 FAIL），但"为任务规划 (h,T)"本身是有效命题——检测器只需学会"何时该换视野"，90% 收敛到同一 T' 也是"自动选择"的证据，故恢复 cube 全套实验。**数据确认**：官方 HF `cube_single_expert.h5` 10000 eps × 201 步、224×224 原生 uint8、抽查无黑帧、expert success 100%；列 `action(5)/qpos(21)/qvel(20)/ep_idx/step_idx/privileged_block_0_pos/quat/privileged_target_block_pos` 全齐，**无需再 patch**；ckpt `D:/stable_worldmodel/checkpoints/cube/weights.pt`（ViT-tiny 224/patch14，action_encoder 25=5×5）；cube eval 为**在线 MuJoCo 仿真**（数据集只提供起点 qpos/qvel + goal，pixels 不参与），故此前 PushT 式"黑帧污染"对 cube 不适用。**端到端 smoke**：`MUJOCO_GL=glfw` 下 n=16/d25/h5 = **87.5%**，链路通。**并发测试**：2 workers 显存峰值 1.8/8 GB、双 run 各 75%（n=8）；3 进程时 RAM 37.4/47.7 GB（free 0.7 GB）触顶，故锁 2 并发。**分段器（cube）**：features_cube 1500 eps（644 s，ViT 编码）→ `models/cube_r2_meta_dual.json` head=**TinyGRU 1745 参数**，hold AUC **0.991** / micro-F1 **0.984**（TP1200/FP0/FN40），事件率 11.1%（≈3.3 事件/ep；此前审计只数 manip onset，这里含 settle），rhythm_max=0.731 ≪ F1 0.984 → **PASS**。**代码修复**：probe_t_policy 的零动作 flat dim 由硬编码 10 改为 `action_block × len(action_mean)`（cube=25）；新增 `head_class`（gru/cnn）与 `detector_meta`/`features_dir` 可配；e6_eval probe 分支随之参数化。probe smoke d25 n=8 = 62.5%（同 seed flat 75%，n 太小不判读），日志 replans=4/fires=4 证明双岗位都在工作。**L1/L3 启动**：flat 27 runs（d{25,50,75}×h{(5,5),(10,10),(15,15)}×3 seeds×n=150）2 workers 后台跑；probe 9 runs 因内存限制排队，L1 完成后启动。**预注册判据（跑前锁定）**：H1 probe ≥ argmax(flat) − 5pp（3 个 d 中 ≥2 成立）；H2 probe > argmax(flat) 配对 McNemar pooled p<0.05（≥1 个 d）；H3 T' 单值占比 <95%（非退化）；三种结局映射写作口径已定 | 新增脚本：src/cube_extract_features.py, src/cube_train_head.py, src/run_cube_grid.py
+
+## 2026-11-08 cube flat 完成 + probe 双 bug 修复 + PushT probe 协议纠错
+
+### L1 cube flat 27/27 完成（n=100×3 seeds, seed 修复后）
+- 首轮发现 seed bug: run_cube_grid.py 未传 seed= 覆盖, 27 个 run 全是默认 42, 三种子结果完全相同 → 修复 job dict 加 seed, 删 17 个错标文件重跑
+- flat 三种子均值: d25: (5,5)65.3/(10,10)63.3/(15,15)53.0; d50: 48.0/48.3/45.7; d75: 62.0/53.7/49.7
+- argmax(flat): d25=65.3(5,5), d50=48.3(10,10), d75=62.0(5,5)
+- d50<d75 是 cube 任务特性 (d50 目标=专家操作中间态需精确匹配空中位姿; d75 目标≈放置完成态)
+
+### probe_t_policy.py 双 bug (PushT+cube 共用代码, 已修复)
+- Bug A: 真实流 refractory 用环境步比较, 应为检测器行(1行=5步) → 等效 refractory=1 行. PushT d75 实证: 1012 fires, 45% 相邻间隔=1行(应≥5)
+- Bug B: _probe_T 无 PROBE_H 上界, T'=11 时计划 55 行 > deque maxlen=50, 静默丢第 1 块动作. PushT d75 实际发生 2 次
+- 修复: refractory 按行号比较; T' clamp 到 [MIN_HORIZON=5, PROBE_H=10]
+- horizon 路径验证: cfg=replace(base,horizon=T',receding=T') → solver._config=cfg → CEM horizon property 每次 solve 现读, 正确
+
+### PushT probe v1 全部作废 (runs/archive_probe_v1_buggy/)
+- 除上述双 bug 外, run_taskD 的 d25/d50 用了 eval_budget=150 而非协议 2*d (50/100), 与 flat 网格不可比; 仅 d75 budget 正确
+- v2 重跑: run_pusht_probe_v2.py, 9 runs (d25/50/75 × 3 seeds), budget=2d, n=150, 等 cube probe 完成后自动接力
+
+### 当前状态 (01:10)
+- cube probe 6/9: d25 55/61/61 (mean 59.0, argmax-5pp=60.3 边界), d50 50/49/51 (mean 50.0 > argmax 48.3 ✓), d75 跑中
+- 之后: cube_final_summary.py 判读 H1/H2/H3 → PushT probe v2 9 runs (~6-10h) → 汇总
+
+## 2026-11-08 02:00 CUBE 最终判读 (runs/cube_verdict.json)
+
+### 结果总表 (n=100x3 seeds)
+| arm | d25 | d50 | d75 |
+|---|---|---|---|
+| flat argmax | 65.3 (5,5) | 48.3 (10,10) | 62.0 (5,5) |
+| probe_t_hr | 59.0 | 50.0 | 52.7 |
+
+### 配对 McNemar (probe vs argmax, pooled 300eps)
+- d25: probe 59.0 < flat 65.3, n01:n10=12:31, p=0.006 (probe 显著更差)
+- d50: probe 50.0 > flat 48.3, 7:2, p=0.182 (更好但不显著)
+- d75: probe 52.7 < flat 62.0, 14:42, p=0.0003 (probe 显著更差)
+
+### 预注册判据
+- H1 (probe >= argmax-5pp, >=2/3): FAIL — 仅 d50 过 (50.0>=43.3); d25 59.0<60.3; d75 52.7<57.0
+- H2 (probe > argmax 且 McNemar p<0.05, >=1): FAIL — d50 更好但 p=0.18
+- H3 (T' 单值占比 <95%): PASS — d25 峰52%(T'=6), d50 峰37%(T'=6), d75 峰36%(T'=6/7), 分布 5-10 非退化
+
+### T' 遥测 (来自 probe json replan_logs)
+- d25: n=100 probes, dist {5:11, 6:52, 7:26, 8:7, 9:3, 10:1}, fires/ep=0.33, replans/ep=0.33 (budget=50=plan-once, 几乎无 probe 机会)
+- d50: n=418, {5:12, 6:37, 7:35, ...}, fires/ep=0.73
+- d75: n=666, {5:15, 6:36, 7:34, ...}, fires/ep=1.02, replans/ep=2.22
+
+### 解读 (写作口径)
+检测器在 cube 上确实学到事件时机 (H3: T' 峰在 6-7 块 ≈ 专家接触/放置窗口, 非恒定), 但双岗位机制净效应为负: d25/d75 上真实流截断把原本好的计划打断 (probe 显著差于 argmax, p=0.006/0.0003), 仅在最"不敏感"的 d50 微优。符合预期: cube 节律太规律, 自适应 horizon 无信息优势, 截断成本 > 收益。这是合法的负结果 — 与 PushT 形成对照 (节律不规则任务受益, 规律任务不受益)。
+
+### 进行中
+- PushT probe v2 (修 bug+正确 budget=2d) 9 runs 已于 01:50 自动接力, 预计 6-10h
+
+## 2026-11-08 07:00 PUSHT probe v2 完成 (修复版: refractory 行单位 + T' clamp + budget=2d)
+
+### probe v2 vs flat (n=150x3, budget=2d)
+| d | probe v2 | flat argmax | flat(10,10) | flat(5,5) | flat(15,15) |
+|---|---|---|---|---|---|
+| d25 | 38.2 | 85.6 (h5) | 45.6 | 85.6 | 6.2 |
+| d50 | 41.8 | 37.1 (h5) | 34.9 | 37.1 | 25.6 |
+| d75 | 26.0 | 20.9 (h5) | 19.8 | 20.9 | 15.1 |
+
+### 配对 McNemar (pooled 450 eps)
+- d25 vs argmax: 9:222 p~0 (差); vs (10,10): 49:82 p=0.005 (差)
+- d50 vs argmax: 75:54 p=0.078 (好, 边缘); vs (10,10): 66:35 p=0.0028 (显著好)
+- d75 vs argmax: 46:23 p=0.0081 (显著好); vs (10,10): 35:7 p<0.0001 (显著好)
+
+### 判据 (PushT, 修复版)
+- H1 (>=argmax-5pp, >=2/3): PASS (d50 +4.7, d75 +5.1 超 argmax; d25 fail)
+- H2 (>argmax 且 p<0.05, >=1): PASS (d75 p=0.008)
+- d25 机制性失败: budget=50=plan-once(horizon10), 首个 plan 必为 h=10 (zc<3 无 probe), probe≈flat(10,10)-截断成本; budget 不够第二次 probe
+- v1(buggy) d75=22.7 → v2=26.0, refractory 修复有效
+
+### T+1 ablation (探索性, 非预注册)
+- 假设: fire 发生在事件块起点, 立即截断打断计划; 让事件块执行完再重锚 (执行侧保留当前块5步) + 规划侧 horizon=T'+1
+- 代码: probe_t_policy.py t_plus_one 开关 (默认关), e6_eval +t_plus_one=true
+- 已启动: cube t1 9 runs (cube_probe_t1_hr_*) → 完成后 PushT t1 9 runs (probe_t1_hr_*) 自动接力
+
+---
+## 2026-11-08 17:00 最终汇总 (写作用, 全部实验结束)
+
+### 协议 (最终有效版)
+- PushT: n=150 eps x 3 seeds (42/43/44), budget=2d (50/100/150), action_block=5, history_len=3
+- cube: n=100 eps x 3 seeds, budget=2d, 同上 (150 在 8GB 显存上触顶卡死, 详见 11-08 00:30 记录)
+- 检测器: 18ch 特征 (f1=|dz|, f2=cos(dz_k,dz_k-1), f3=dual创新), W=2/4/8 mean/std; tau=0.5, refractory=5 行, PROBE_H=10, MIN_HORIZON=5
+- cube head: GRU (1745 参数), hold AUC 0.991 / F1 0.984, 事件率 11.1% >> rhythm_max 0.731
+- probe 双岗位: (A) 想象流探测 T' -> horizon=receding=T'; (B) 真实流 fire -> 清 buffer 提前重锚
+- 代码修复 (v2): refractory 按行比较 (原按环境步=5倍过触发); T' clamp 到 [5,10] (原 T'=11 会丢 deque 首块)
+
+### PUSHT 总表 (success %, n=150x3)
+| arm | d25 | d50 | d75 |
+|---|---|---|---|
+| flat h5r5 | 85.6 | 37.1 | 20.9 |
+| flat h10r10 | 45.6 | 34.9 | 19.8 |
+| flat h15r15 | 6.2 | 25.6 | 15.1 |
+| probe v2 | 38.2 | 41.8 | 26.0 |
+| probe+T+1 (探索) | 24.7 | 36.0 | 未跑 |
+
+McNemar (probe v2 vs flat, pooled 450):
+- d50 vs argmax(37.1): +4.7pp, p=0.078; vs h10(34.9): +6.9pp, p=0.0028
+- d75 vs argmax(20.9): +5.1pp, p=0.0081; vs h10(19.8): +6.2pp, p<0.0001
+- d25 vs argmax(85.6): p~0 差; vs h10(45.6): -7.4pp, p=0.005 差
+- T+1 vs v2: d25 p<0.0001 显著差, d50 p=0.0084 显著差 -> T+1 为负消融, 立即截断已最优
+
+PushT 判据: H1 PASS (2/3), H2 PASS (d75), H3 PASS (T' 双峰 {5,10}, 主值占比 58-62% <95%)
+PushT T' 遥测: d25 {10:62%,5:38%} fires/ep=0.79; d50 {5:59%,10:41%} fires/ep=1.64; d75 {5:58%,10:42%} fires/ep=2.46
+d25 失败机制: budget=50=plan-once(h10), zc<3 首 plan 无法 probe, 无第二次机会
+
+### CUBE 总表 (success %, n=100x3)
+| arm | d25 | d50 | d75 |
+|---|---|---|---|
+| flat h5r5 | 65.3 | 48.0 | 62.0 |
+| flat h10r10 | 63.3 | 48.3 | 53.7 |
+| flat h15r15 | 53.0 | 45.7 | 49.7 |
+| probe | 59.0 | 50.0 | 52.7 |
+| probe+T+1 (探索) | 59.7 | 48.3 | 50.7 |
+
+McNemar (probe vs argmax, pooled 300): d25 59.0<65.3 p=0.006; d50 50.0>48.3 p=0.182; d75 52.7<62.0 p=0.0003
+probe vs flat(10,10): d25 p=0.0019 差; d50 p=0.18 好; d75 p=0.61 差
+T+1 vs probe: 全部打平 (p=0.62/0.13/0.15)
+
+cube 判据: H1 FAIL (仅 d50 过), H2 FAIL (无显著胜), H3 PASS (T' 峰 6-7, 主值 36-52%)
+cube T' 遥测: d25 {5:11,6:52,7:26,8:7,9:3,10:1} fires/ep=0.33; d50 {6:37,7:35} fires/ep=0.73; d75 {6:36,7:34} fires/ep=1.02
+
+### 论文主线 (对照故事)
+1. 检测器在两个任务上都学到真实事件时机 (H3 双过; cube T' 峰 6-7 ≈ 专家接触/放置窗口 62-65 步)
+2. 收益被任务节律调节: PushT (节律不规则, d25 h5/h10 差 40pp) probe 在 d50/d75 显著超 argmax; cube (节律极规律) probe 净亏损
+3. d25 plan-once 是结构性边界: budget 只够一次规划时自适应机制无条件生效
+4. T+1 负消融: 立即截断优于延后一块, 截断时机设计已最优 (PushT 显著 p<0.01; cube 打平)
+5. 写作注意: T+1 与 cube 属探索性实验, 与预注册 H1/H2/H3 分开标注; PushT 主结果基于修复后 v2

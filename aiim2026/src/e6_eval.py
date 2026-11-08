@@ -143,10 +143,12 @@ def run(cfg: DictConfig):
         )
     elif arm == 'probe_t':
         from probe_t_policy import ProbeTPolicy
+        feats_dir = cfg.get('features_dir', 'features')
+        det_meta = cfg.get('detector_meta', 'r2_meta_dual.json')
         feats_meta = json.load(
-            open(SRC.parent / 'features' / 'meta.json'))
+            open(SRC.parent / feats_dir / 'meta.json'))
         r2m = localize_ckpt_paths(
-            json.load(open(SRC.parent / 'models' / 'r2_meta_dual.json')))
+            json.load(open(SRC.parent / 'models' / det_meta)))
         policy = ProbeTPolicy(
             solver=solver, config=config, process=process,
             transform=transform, model=model,
@@ -158,6 +160,8 @@ def run(cfg: DictConfig):
             tau=r2m['tau'], refractory=r2m['refractory'],
             action_mean=feats_meta['action_mean'],
             action_std=feats_meta['action_std_plus_eps'],
+            head_class=r2m.get('head_class', 'cnn'),
+            t_plus_one=bool(cfg.get('t_plus_one', False)),
         )
     else:
         policy = swm.policy.WorldModelPolicy(
