@@ -1,0 +1,97 @@
+{
+  "rhythm_max_micro_f1": 0.7305389221556886,
+  "label_rate_train": 0.11132882882882883,
+  "data_pos_weight": 7.982399352619867,
+  "sweep": [
+    {
+      "head": "gru",
+      "pos_weight": 1.0,
+      "params": 1745,
+      "hold_auc": 0.9895679022443238,
+      "fire_micro_f1": 0.977319587628866,
+      "tp_fp_fn": [
+        1185,
+        0,
+        55
+      ],
+      "epochs": 127,
+      "seconds": 23.1
+    },
+    {
+      "head": "gru",
+      "pos_weight": 2.0,
+      "params": 1745,
+      "hold_auc": 0.9905207583589609,
+      "fire_micro_f1": 0.983189831898319,
+      "tp_fp_fn": [
+        1199,
+        0,
+        41
+      ],
+      "epochs": 158,
+      "seconds": 27.1
+    },
+    {
+      "head": "gru",
+      "pos_weight": 7.98,
+      "params": 1745,
+      "hold_auc": 0.9905503664202056,
+      "fire_micro_f1": 0.9836065573770492,
+      "tp_fp_fn": [
+        1200,
+        0,
+        40
+      ],
+      "epochs": 116,
+      "seconds": 20.8
+    },
+    {
+      "head": "gru",
+      "pos_weight": 7.98,
+      "params": 1745,
+      "hold_auc": 0.9900438395602957,
+      "fire_micro_f1": 0.9836065573770492,
+      "tp_fp_fn": [
+        1200,
+        0,
+        40
+      ],
+      "epochs": 72,
+      "seconds": 12.9
+    },
+    {
+      "head": "cnn",
+      "pos_weight": 7.98,
+      "params": 2769,
+      "hold_auc": 0.9898234149054507,
+      "fire_micro_f1": 0.9823842687423188,
+      "tp_fp_fn": [
+        1199,
+        2,
+        41
+      ],
+      "epochs": 95,
+      "seconds": 19.7
+    }
+  ],
+  "selected": {
+    "head": "gru",
+    "pos_weight": 7.98,
+    "params": 1745,
+    "hold_auc": 0.9905503664202056,
+    "fire_micro_f1": 0.9836065573770492,
+    "tp_fp_fn": [
+      1200,
+      0,
+      40
+    ],
+    "epochs": 116,
+    "seconds": 20.8
+  },
+  "gates": {
+    "auc_gate": 0.7,
+    "f1_gate": 0.745,
+    "rhythm_max": 0.7305389221556886
+  },
+  "verdict": "PASS"
+}
