@@ -1,4 +1,4 @@
-"""E6 evaluation entry: boundary / equal arms on the PushT protocol.
+"""E6 evaluation entry: boundary / equal / probe_t / pace arms on PushT.
 
 Mirrors third_party stable-worldmodel scripts/plan/eval_wm.py so the episode
 sampling matches the E1 flat baseline exactly (same seed -> same 50 start/goal
@@ -141,6 +141,18 @@ def run(cfg: DictConfig):
             arm=arm, interval=cfg.get('interval', 4),
             **head_cfg,
         )
+    elif arm == 'pace':
+        from pace_arm import PACEPolicy
+        feats_meta = json.load(
+            open(SRC.parent / 'features' / 'meta.json'))
+        policy = PACEPolicy(
+            solver=solver, config=config, process=process,
+            transform=transform,
+            action_mean=feats_meta['action_mean'],
+            action_std=feats_meta['action_std_plus_eps'],
+            theta=float(cfg.get('pace_theta', 0.5)),
+            min_blocks=int(cfg.get('pace_min_blocks', 2)),
+        )
     elif arm == 'probe_t':
         from probe_t_policy import ProbeTPolicy
         feats_dir = cfg.get('features_dir', 'features')
@@ -217,6 +229,9 @@ def run(cfg: DictConfig):
                                np.asarray(metrics['episode_successes'])],
         'replan_logs': {str(i): v for i, v in enumerate(logs)},
     }
+    if arm == 'pace':
+        out['pace_theta'] = float(cfg.get('pace_theta', 0.5))
+        out['pace_min_blocks'] = int(cfg.get('pace_min_blocks', 2))
     out_path = Path(cfg.get('out_json', 'e6_out.json'))
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, 'w') as f:
