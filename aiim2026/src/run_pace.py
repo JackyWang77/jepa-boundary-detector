@@ -75,12 +75,15 @@ def main():
     chosen = list(THETAS)
     if '--theta' in sys.argv:
         chosen = [float(sys.argv[sys.argv.index('--theta') + 1])]
+    ds = DS
+    if '--d' in sys.argv:
+        ds = (int(sys.argv[sys.argv.index('--d') + 1]),)
     os.environ.setdefault('STABLEWM_HOME', r'D:\stable_worldmodel')
     RUNS.mkdir(exist_ok=True)
     t0 = time.time()
     done = fail = 0
     for theta in chosen:
-        for d in DS:
+        for d in ds:
             for seed in SEEDS:
                 if run_one(d, seed, theta):
                     done += 1

@@ -88,6 +88,63 @@ for d in ['25', '50', '75']:
             print(f"  POOLED probe={ps.mean()*100:.1f}% vs {arm}={f.mean()*100:.1f}%  [{m['probe_only']}v{m['flat_only']}] p={m['p']:.6f} {sig}")
 
 print("\n" + "="*70)
+print("PACE BASELINE · per (theta, d) + truncation statistics")
+print("="*70)
+# (theta, d, seed) -> (episode_successes, keeps over all replans)
+PACE = {}
+for th, tag in [(0.5, '050'), (0.3, '030')]:
+    for d in ['25', '50', '75']:
+        for seed in [42, 43, 44]:
+            f = RUNS / f'pace_th{tag}_d{d}_s{seed}_n150.json'
+            if not f.exists():
+                continue
+            j = json.loads(f.read_text())
+            keeps = [int(r['keep'])
+                     for env_logs in j.get('replan_logs', {}).values()
+                     for entry in env_logs
+                     for r in entry.get('replans', [])]
+            PACE[(th, d, seed)] = (np.array(j['episode_successes'], dtype=bool),
+                                   np.array(keeps, dtype=int))
+
+for th in [0.5, 0.3]:
+    print(f"\n--- theta={th} ---")
+    for d in ['25', '50', '75']:
+        cells = [PACE[(th, d, s)] for s in [42, 43, 44] if (th, d, s) in PACE]
+        if not cells:
+            continue
+        rates = [c[0].mean() * 100 for c in cells]
+        keeps = np.concatenate([c[1] for c in cells])
+        trunc = (keeps < 10).mean() * 100 if keeps.size else 0.0
+        print(f"  d{d}: seeds={len(cells)} mean={np.mean(rates):.1f}%  "
+              f"[{min(rates):.1f}-{max(rates):.1f}]  "
+              f"replans={keeps.size} mean_keep={keeps.mean():.2f} "
+              f"trunc={trunc:.1f}%")
+
+print("\n" + "="*70)
+print("PACE vs probe_t_hr / flat(10,10) — paired McNemar (pooled)")
+print("="*70)
+for th in [0.5, 0.3]:
+    for d in ['25', '50', '75']:
+        seeds = [s for s in [42, 43, 44] if (th, d, s) in PACE]
+        if not seeds:
+            continue
+        p = np.concatenate([PACE[(th, d, s)][0] for s in seeds])
+        line = f"  th={th} d{d}: PACE={p.mean()*100:.1f}% (n={p.size})"
+        if all((s, d, 'flat(10,10)') in B for s in seeds):
+            f = np.concatenate([B[(s, d, 'flat(10,10)')] for s in seeds])
+            m = mcnemar(p, f)
+            line += f"  vs h10={f.mean()*100:.1f}% " + (
+                f"[{m['probe_only']}v{m['flat_only']} p={m['p']:.4f}]"
+                if m else "(n<25)")
+        if all((s, d) in PROBE for s in seeds):
+            q = np.concatenate([PROBE[(s, d)] for s in seeds])
+            m2 = mcnemar(p, q)
+            line += f"  vs probe={q.mean()*100:.1f}% " + (
+                f"[{m2['probe_only']}v{m2['flat_only']} p={m2['p']:.4f}]"
+                if m2 else "(n<25)")
+        print(line)
+
+print("\n" + "="*70)
 print("HORIZON COST Δ = h5 - h10 (pp) — bigger = wrong horizon hurts more")
 print("="*70)
 grid = json.loads(Path(r'd:\Research-2026-jepa-boundary-detector\aiim2026\runs\abc_verdict.json').read_text())['B_grid']
@@ -103,9 +160,12 @@ print("\n" + "="*70)
 print("WALL-CLOCK · probe vs flat (lane A)")
 print("="*70)
 A = json.loads(Path(r'd:/Research-2026-jepa-boundary-detector/taskA_data.js').read_text().replace('window.TASKA = ', ''))
-print(f"  flat(5,5):  s42=615m s43=394m s44=196m  total={sum(r['elapsed_min'] for r in A['runs'] if 'flat_h5r5' in r['name']):.0f}m")
-print(f"  flat(10,10): s42=580m s43=347m s44=153m  total={sum(r['elapsed_min'] for r in A['runs'] if 'flat_h10r10' in r['name']):.0f}m")
-print(f"  probe_t_hr: s42=522m s43=301m s44=103m  total={sum(r['elapsed_min'] for r in A['runs'] if 'probe' in r['name']):.0f}m")
+def _lane_total(tag):
+    return sum((r.get('elapsed_min') or 0) for r in A['runs'] if tag in r['name'])
+
+print(f"  flat(5,5):   total={_lane_total('flat_h5r5'):.0f}m")
+print(f"  flat(10,10): total={_lane_total('flat_h10r10'):.0f}m")
+print(f"  probe_t_hr:  total={_lane_total('probe'):.0f}m")
 
 # T' telemetry
 print("\n" + "="*70)
