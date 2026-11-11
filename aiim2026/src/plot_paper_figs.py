@@ -178,58 +178,75 @@ def fig2():
     ax.plot(steps, drift_none, color='0.55', lw=1.2, label='no re-anchor')
     ax.plot(steps, drift_re, color='#0072BD', lw=1.4,
             label='re-anchor at fires')
-    for s in fires:
-        ax.axvline(s, color='#D95319', ls='--', lw=0.8, alpha=0.8)
-    ax.axvline(fires[0], color='#D95319', ls='--', lw=0.8, alpha=0.8,
-               label='detector fire')
+    for i, s in enumerate(fires):
+        ax.plot([s, s], [0, drift_none[s]], color='#D95319', ls='--', lw=0.8,
+                alpha=0.8, label='detector fire' if i == 0 else None, zorder=3)
     ax.set_xlabel('model step $t$')
-    ax.set_ylabel(r'$\|\hat{z}_t - z_t\|_2$')
-    ax.set_xlim(0, len(z) - 1)
-    ax.set_xticks(range(0, len(z), 5))
+    ax.set_ylabel(r'Error $\|\hat{z}_t - z_t\|_2$')
+    ax.set_xlim(-0.4, len(z) - 0.6)
+    ax.set_xticks(range(0, len(z)))
+    ax.tick_params(axis='x', labelsize=6)
     ax.set_ylim(bottom=0)
-    ax.legend(frameon=False, loc='upper left', handlelength=1.6)
+    ax.legend(frameon=False, loc='upper center', bbox_to_anchor=(0.5, -0.22),
+              ncol=3, handlelength=1.6, columnspacing=1.0)
     ax.spines[['top', 'right']].set_visible(False)
+
+    # red dots at the re-anchor points on the blue curve
+    for s in fires:
+        ax.plot(s, drift_re[s], 'o', color='#D95319', ms=4, zorder=5)
+    ax.text(fires[0] + 2.3, 0.3, 're-anchor', fontsize=7.5,
+            color='#0072BD', ha='center', va='bottom')
+    ax.text(fires[1] + 2.4, 0.15, 're-anchor', fontsize=7.5,
+            color='#0072BD', ha='center', va='bottom')
+    # gray drift values at the same steps (no re-anchor side)
+    for s in fires:
+        ax.plot(s, drift_none[s], 'o', color='0.55', ms=2.5, zorder=5)
+        ax.text(s, drift_none[s] + 0.3, f'{drift_none[s]:.1f}', fontsize=8,
+                color='0.5', ha='center', va='bottom')
+
     fig.tight_layout(pad=0.3)
     for ext in ('pdf', 'png'):
-        fig.savefig(TEMPLATE / f'fig2_drift.{ext}', dpi=300)
+        fig.savefig(TEMPLATE / f'fig2_drift.{ext}', dpi=300,
+                    bbox_inches='tight')
     plt.close(fig)
 
 
 def fig3():
-    # left: PushT probe horizons at d=75 (3 seeds)
-    ts_p = []
-    for seed in (42, 43, 44):
-        d = json.load(open(ROOT / 'runs' / f'probe_t_hr_d75_s{seed}.json'))
-        for ep_log in d['replan_logs'].values():
-            for entry in ep_log:
-                for p in entry['probes']:
-                    ts_p.append(p['T'])
-    # T' is clamped to [5,10]; one log row held the raw value
-    ts_p = np.clip(np.asarray(ts_p), 5, 10)
+    # PushT probe horizons, d=50 and d=75 (3 seeds each)
+    def load_T(dist):
+        ts = []
+        for seed in (42, 43, 44):
+            matches = list((ROOT / 'runs').glob(f'probe_t_hr_d{dist}_s{seed}*.json'))
+            d = json.load(open(matches[0]))
+            for ep_log in d['replan_logs'].values():
+                for entry in ep_log:
+                    for p in entry['probes']:
+                        ts.append(p['T'])
+        # T' is clamped to [5,10]; one log row held the raw value
+        return np.clip(np.asarray(ts), 5, 10)
 
-    # right: Cube probe horizons, pooled over d in {25,50,75} and 3 seeds
-    ts_c = []
-    for f in sorted((ROOT / 'results' / 'cube_probe_raw').glob('cube_probe_t_hr_d*.json')):
-        d = json.load(open(f))
-        for ep_log in d['replan_logs'].values():
-            for entry in ep_log:
-                for p in entry['probes']:
-                    ts_c.append(p['T'])
-    ts_c = np.clip(np.asarray(ts_c), 5, 10)
+    ts50 = load_T(50)
+    ts75 = load_T(75)
 
-    bins = np.arange(5, 11)
-    fig, axes = plt.subplots(1, 2, figsize=(3.5, 1.55), sharey=True)
-    for ax, ts, color, name in ((axes[0], ts_p, '#0072BD', 'PushT'),
-                                (axes[1], ts_c, '#D95319', 'Cube')):
+    fig, axes = plt.subplots(1, 2, figsize=(3.5, 1.9), sharey=True)
+    for ax, ts, dist in ((axes[0], ts50, '50'), (axes[1], ts75, '75')):
         vals, counts = np.unique(ts, return_counts=True)
         share = 100 * counts / len(ts)
-        print(f'Fig3 {name} T distribution:', dict(zip(vals.tolist(), counts.tolist())),
+        print(f'Fig3 d={dist} T distribution:', dict(zip(vals.tolist(), counts.tolist())),
               f'n={len(ts)}, top share={share.max():.1f}%')
-        ax.bar(vals, share, width=0.7, color=color, edgecolor='none')
-        ax.set_xticks(bins)
-        ax.set_xlim(4.3, 10.7)
+        xs = np.arange(len(vals))
+        ax.bar(xs, share, width=0.45,
+               color=['#2E86DE' if i == 0 else '#F48D3E' for i in range(len(vals))],
+               edgecolor='none')
+        for x, s in zip(xs, share):
+            ax.text(x, s + 1.0, f'{s:.0f}%', ha='center', va='bottom', fontsize=7)
+        ax.set_xticks(xs)
+        ax.set_xticklabels([str(v) for v in vals])
+        ax.set_xlim(-0.6, len(vals) - 0.4)
+        ax.set_ylim(0, 62)
         ax.set_xlabel("$T'$ (model steps)")
-        ax.set_title(f'{name} ($n$={len(ts)})', fontsize=7)
+        ax.set_title(f'$d=50$ ($n$={len(ts)})' if dist == '50'
+                     else f'$d=75$ ($n$={len(ts)})', fontsize=8)
         ax.spines[['top', 'right']].set_visible(False)
     axes[0].set_ylabel('share of probes (%)')
     fig.tight_layout(pad=0.3)
