@@ -247,3 +247,6 @@ d25 对 probe 无鉴别力: budget=50 = 一个 10 块计划(h10 的 plan_len), �
     probe 三格仍显著胜 θ=0.3 PACE（d25 p=0.0052，d50 p=0.0037，d75 p=0.0003）
   **结论**：PACE 的"相位截断"机制只在 θ 够大时才触发，而一旦触发又会损失成功率。θ=0.5 主档全格输给 probe（d50/d75 显著），仅在 d25 趋势性胜 probe 但不显著且输给 flat h10。论文 Table I PACE 行报 θ=0.5 均值，脚注说明 θ=0.3 退化为 flat h10 后仍不敌 probe。
   **产物**：aiim2026/runs/pace_th{050,030}_d{25,50,75}_s{42,43,44}_n150.json（18 个），pushT_final_summary.py 追加 PACE 段（McNemar + 截断统计），汇总见控制台输出。
+
+2026-11-12 | [mac agent] **审稿回应:R2 跨容量实验(待 4060 执行)** | 详见 R2_CROSS_CAPACITY.md | 论文已含 cube 跨模型证据(head AUC 0.990/precision 100%,probe 52.7 vs flat 62.0);pusht_small 实验跑完补入 Results
+2026-11-12 | [mac agent] **审稿回应:R1 误触发审计(mac 本地完成)** | 结果 results/r1_review.json + fig3_signal_dist.pdf | PushT hold-out precision 89.1%/false fires 0.37 per ep;cube 0 误触发 ⇒ 规则任务上的增益消失不是检测问题

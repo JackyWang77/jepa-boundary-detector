@@ -1,0 +1,21 @@
+{
+  "part_b_pushT_holdout": {
+    "hold_episodes": 100,
+    "tp": 301,
+    "fp": 37,
+    "fn": 246,
+    "precision": 0.8905,
+    "recall": 0.5503,
+    "f1": 0.6802,
+    "fires_per_episode": 3.38,
+    "false_fires_per_episode": 0.37
+  },
+  "part_c_cube": {
+    "cube_head": "gru",
+    "cube_hold_auc": 0.9905503664202056,
+    "cube_f1": 0.9836065573770492,
+    "cube_precision": 1.0,
+    "cube_false_fires": 0,
+    "cube_real_fires_per_ep": 0.563
+  }
+}
