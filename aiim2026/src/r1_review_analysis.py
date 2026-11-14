@@ -83,16 +83,21 @@ def main():
                                     map_location='cpu'))
     head.eval()
 
-    # ---- Part B: hold-out fire audit with the deployed head
-    tp = fp = fn = 0
-    fires_per_ep, eps_len = [], []
+    # ---- Part B/D: hold-out fire audit + tau sweep (deployed head)
+    hold_preds = []
     with torch.no_grad():
         for ep in hold_ids:
             X, ev, K, *_ = build_episode(ep, f5, W)
             x = (torch.from_numpy(X) - torch.from_numpy(mu)) \
                 / torch.from_numpy(sd)
             p = torch.sigmoid(head(x[None]))[0].numpy()
-            pred = np.nonzero(apply_refractory(p > TAU))[0] + 3
+            hold_preds.append((p, ev, K))
+
+    def audit(tau):
+        tp = fp = fn = 0
+        fires_per_ep = []
+        for p, ev, K in hold_preds:
+            pred = np.nonzero(apply_refractory(p > tau))[0] + 3
             matched, t = set(), 0
             for q in pred:
                 near = [e for e in ev
@@ -104,20 +109,22 @@ def main():
             fp += len(pred) - t
             fn += len(ev) - t
             fires_per_ep.append(len(pred))
-            eps_len.append(K)
+        precision = tp / max(tp + fp, 1)
+        recall = tp / max(tp + fn, 1)
+        f1 = 2 * tp / max(2 * tp + fp + fn, 1)
+        return {'tau': round(float(tau), 2),
+                'tp': tp, 'fp': fp, 'fn': fn,
+                'precision': round(precision, 4),
+                'recall': round(recall, 4),
+                'f1': round(f1, 4),
+                'fires_per_episode': round(float(np.mean(fires_per_ep)), 3),
+                'false_fires_per_episode': round(fp / len(hold_ids), 3)}
 
-    precision = tp / max(tp + fp, 1)
-    recall = tp / max(tp + fn, 1)
-    f1 = 2 * tp / max(2 * tp + fp + fn, 1)
-    part_b = {
-        'hold_episodes': len(hold_ids),
-        'tp': tp, 'fp': fp, 'fn': fn,
-        'precision': round(precision, 4),
-        'recall': round(recall, 4),
-        'f1': round(f1, 4),
-        'fires_per_episode': round(float(np.mean(fires_per_ep)), 3),
-        'false_fires_per_episode': round(fp / len(hold_ids), 3),
-    }
+    part_b = {'hold_episodes': len(hold_ids)}
+    part_b.update({k: v for k, v in audit(TAU).items() if k != 'tau'})
+    assert abs(part_b['f1'] - 0.6802) < 1e-3, \
+        f"regression broken at tau=0.5: f1={part_b['f1']}"
+    part_d = [audit(t) for t in np.arange(0.30, 0.71, 0.05)]
 
     # ---- Part A: signal distributions (all recorded episodes)
     eps_all = json.load(open(FEAT / 'meta.json'))['episode_ids']
@@ -169,6 +176,7 @@ def main():
     part_c['cube_real_fires_per_ep'] = round(float(np.mean(cube_fires)), 3)
 
     out = {'part_b_pushT_holdout': part_b,
+           'part_d_tau_sweep_pushT': part_d,
            'part_c_cube': part_c}
     json.dump(out, open(RESULTS / 'r1_review.json', 'w'), indent=2)
     print(json.dumps(out, indent=2))

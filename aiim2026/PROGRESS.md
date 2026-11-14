@@ -250,3 +250,5 @@ d25 对 probe 无鉴别力: budget=50 = 一个 10 块计划(h10 的 plan_len), �
 
 2026-11-12 | [mac agent] **审稿回应:R2 跨容量实验(待 4060 执行)** | 详见 R2_CROSS_CAPACITY.md | 论文已含 cube 跨模型证据(head AUC 0.990/precision 100%,probe 52.7 vs flat 62.0);pusht_small 实验跑完补入 Results
 2026-11-12 | [mac agent] **审稿回应:R1 误触发审计(mac 本地完成)** | 结果 results/r1_review.json + fig3_signal_dist.pdf | PushT hold-out precision 89.1%/false fires 0.37 per ep;cube 0 误触发 ⇒ 规则任务上的增益消失不是检测问题
+2026-11-13 | [mac agent] **审稿回应:R1 τ-sweep + 论文高亮修订版** | results/r1_review.json 增 part_d_tau_sweep_pushT(τ∈[0.3,0.7]:precision 82.4→92.2%,误触发 0.71→0.19/ep,无悬崖,τ=0.5 回归校验 F1==0.6802 通过) | 论文新增:τ-sweep 句、DINO-WM(F_z 维度灾难+延迟)/V-JEPA(无动作条件)障碍句、dinowm2024 引用;全部修订处 soul 黄色高亮(\revtrue/\revfalse 开关),5 页 0 error/0 overfull,revision zip 与 final 版 PDF 已备于 Templates 目录
+2026-11-13 | [mac agent] **4060 任务就绪** | R2_CROSS_CAPACITY.md Phase 0 改减半 Predictor(depth 6→3、mlp 2048→1024,附不选 ViT-Small 理由)+ 新增 Phase 4(Cube 检测层:分布图+τ-sweep) | PROMPT_4060_CUBE.md 为可直接复制发给 4060 agent 的 prompt

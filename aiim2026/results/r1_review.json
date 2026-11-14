@@ -10,6 +10,107 @@
     "fires_per_episode": 3.38,
     "false_fires_per_episode": 0.37
   },
+  "part_d_tau_sweep_pushT": [
+    {
+      "tau": 0.3,
+      "tp": 333,
+      "fp": 71,
+      "fn": 214,
+      "precision": 0.8243,
+      "recall": 0.6088,
+      "f1": 0.7003,
+      "fires_per_episode": 4.04,
+      "false_fires_per_episode": 0.71
+    },
+    {
+      "tau": 0.35,
+      "tp": 328,
+      "fp": 64,
+      "fn": 219,
+      "precision": 0.8367,
+      "recall": 0.5996,
+      "f1": 0.6986,
+      "fires_per_episode": 3.92,
+      "false_fires_per_episode": 0.64
+    },
+    {
+      "tau": 0.4,
+      "tp": 324,
+      "fp": 52,
+      "fn": 223,
+      "precision": 0.8617,
+      "recall": 0.5923,
+      "f1": 0.7021,
+      "fires_per_episode": 3.76,
+      "false_fires_per_episode": 0.52
+    },
+    {
+      "tau": 0.45,
+      "tp": 318,
+      "fp": 47,
+      "fn": 229,
+      "precision": 0.8712,
+      "recall": 0.5814,
+      "f1": 0.6974,
+      "fires_per_episode": 3.65,
+      "false_fires_per_episode": 0.47
+    },
+    {
+      "tau": 0.5,
+      "tp": 301,
+      "fp": 37,
+      "fn": 246,
+      "precision": 0.8905,
+      "recall": 0.5503,
+      "f1": 0.6802,
+      "fires_per_episode": 3.38,
+      "false_fires_per_episode": 0.37
+    },
+    {
+      "tau": 0.55,
+      "tp": 286,
+      "fp": 33,
+      "fn": 261,
+      "precision": 0.8966,
+      "recall": 0.5229,
+      "f1": 0.6605,
+      "fires_per_episode": 3.19,
+      "false_fires_per_episode": 0.33
+    },
+    {
+      "tau": 0.6,
+      "tp": 272,
+      "fp": 29,
+      "fn": 275,
+      "precision": 0.9037,
+      "recall": 0.4973,
+      "f1": 0.6415,
+      "fires_per_episode": 3.01,
+      "false_fires_per_episode": 0.29
+    },
+    {
+      "tau": 0.65,
+      "tp": 253,
+      "fp": 23,
+      "fn": 294,
+      "precision": 0.9167,
+      "recall": 0.4625,
+      "f1": 0.6148,
+      "fires_per_episode": 2.76,
+      "false_fires_per_episode": 0.23
+    },
+    {
+      "tau": 0.7,
+      "tp": 226,
+      "fp": 19,
+      "fn": 321,
+      "precision": 0.9224,
+      "recall": 0.4132,
+      "f1": 0.5707,
+      "fires_per_episode": 2.45,
+      "false_fires_per_episode": 0.19
+    }
+  ],
   "part_c_cube": {
     "cube_head": "gru",
     "cube_hold_auc": 0.9905503664202056,
