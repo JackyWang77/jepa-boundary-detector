@@ -24,13 +24,37 @@ mac 侧已完成 PushT 版本的分布图与 τ-sweep(见 `aiim2026/results/r1_r
 
 脚本逻辑严格对照 mac 侧 `aiim2026/src/r1_review_analysis.py` 的 Part A 与 Part D:
 
-1. **信号分布图**(Part A 对应):对 features_cube 全部 episode,画三信号
-   f1 energy / f2 cosine / f3 novelty 在 kinematic event 步 vs non-event 步的
-   密度直方图(step hist,bins=60,density=True,event 色 `#0072BD`、
-   non-event 色 `#8C8C8C`,lw=1.4,面板标题 f1 energy / f2 cosine / f3 novelty,
-   横轴无需 y 刻度,首面板 density + legend,figsize=(7.0, 2.4),tight_layout)
-   → 存 `aiim2026/results/fig3_cube_dist.pdf`。
-   注意 f1/f2/f3_dual 与 18 通道窗口统计的构造必须与 cube_train_head.py 训练时一致。
+1. **信号分布图**(Part A 对应):对 features_cube 全部 episode,画三信号在 kinematic
+   event 步 vs non-event 步的密度直方图。**绘图代码直接原样复用 mac 侧实现**
+   (该脚本已在 git:`aiim2026/src/r1_review_analysis.py` 的 Part A 段),
+   只改数据来源与输出路径,保证两个任务的图完全同风格:
+
+   ```python
+   BLUE, GRAY = '#0072BD', '#8C8C8C'
+   fig, axes = plt.subplots(1, 3, figsize=(7.0, 2.4))
+   for ax, (ev, ne, title) in zip(
+           axes,
+           [(np.concatenate(f1_ev), np.concatenate(f1_ne), r'$f_1$ energy'),
+            (np.concatenate(f2_ev), np.concatenate(f2_ne), r'$f_2$ cosine'),
+            (np.concatenate(f3_ev), np.concatenate(f3_ne), r'$f_3$ novelty')]):
+       ax.hist(ne, bins=60, density=True, histtype='step', lw=1.4,
+               color=GRAY, label='non-event')
+       ax.hist(ev, bins=60, density=True, histtype='step', lw=1.4,
+               color=BLUE, label='event')
+       ax.set_title(title, fontsize=9)
+       ax.tick_params(labelsize=7)
+       ax.set_yticks([])
+   axes[0].set_ylabel('density', fontsize=7)
+   axes[0].legend(fontsize=7, loc='upper right', frameon=False)
+   fig.tight_layout(pad=0.4)
+   fig.savefig(OUT / 'fig3_cube_dist.pdf', bbox_inches='tight')
+   plt.close(fig)
+   ```
+
+   → 存 `aiim2026/results/fig3_cube_dist.pdf`(mac 后续把它与 PushT 版拼成两行)。
+   注意 f1/f2/f3_dual 与 18 通道窗口统计的构造必须与 cube_train_head.py 训练时一致,
+   即 f1_ev/f1_ne 等六个列表的收集方式也要照抄 mac 脚本 Part A(与 build_episode
+   返回的 f1r/f2r/f3r 对齐,mask 逻辑不变)。
 2. **τ-sweep**(Part D 对应):Cube hold-out 集上,部署头阈值
    τ ∈ {0.30, 0.35, ..., 0.70}(步长 0.05),refractory=5、match tol=2 不变,
    每档输出 precision / recall / F1 / fires_per_episode / false_fires_per_episode
