@@ -255,3 +255,4 @@ d25 对 probe 无鉴别力: budget=50 = 一个 10 块计划(h10 的 plan_len), �
 2026-11-14 | [mac agent] **4060 prompt 就绪:pusht_small 跨容量** | PROMPT_4060_PUSHT_SMALL.md(减半 predictor depth 6→3/mlp 1024,flat grid+probe 预注册判读,与 Cube prompt 配套)
 
 2026-11-15 | [4060 agent] **cube 检测层证据 (R1-Part A/D)** | results/fig3_cube_dist.pdf + results/r1_cube_hist_tau.json（脚本 src/r1_cube_hist_tau.py）| hold-out 300 集：precision 100.0% / recall 96.8% / F1 0.9836 / 每集 4.00 次触发 / **误触发 0.00 次每集**；τ∈[0.30,0.70] 九档结果完全一致（该区间内无任何一次触发掉到 0.30 以下，检测头在 Cube 上饱和，τ-sweep 无悬崖）。tp/fp/fn=1200/0/40 与 cube_r2_dual.json 记录逐字段一致（回归校验通过）。Fig.3 左半（PushT）已有，此行补右半风格同源分布图。pdf 16 KB 已入 git，mac pull 即得
+2026-11-15 | [mac agent] **审稿回应:Cube 检测层证据并入论文** | Fig.3 改双行(PushT 上/Cube 下),Results 段更新:cube 300 集 hold-out precision 100%/0 误触发、τ-sweep 两任务无悬崖 | 5 页 0 error/0 overfull,revision zip(含 fig3_cube_dist.pdf)与无高亮版已重打包;回复信同步更新
