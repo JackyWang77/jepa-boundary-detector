@@ -145,11 +145,41 @@ def grid(eps=(100, 314, 777)):
     print(f'wrote {out}.pdf (.png)')
 
 
+def task(ep=314):
+    """Three frames only (initial / lift / final), no caption and no time
+    series. Sized like the Fig.3 signal-distribution row: figsize=(7.0, 2.4).
+    """
+    with h5py.File(H5, 'r', swmr=True) as f:
+        o = int(f['ep_offset'][ep])
+        L = int(f['ep_len'][ep])
+        pix = f['pixels'][o:o + L]
+        block = f['privileged_block_0_pos'][o:o + L]
+
+    t_lift = lift_frame(block)
+    stages = [('initial', 0), ('lift / carry', t_lift), ('final', L - 1)]
+    fig, axes = plt.subplots(1, 3, figsize=(7.0, 2.4))
+    for ax, (label, t) in zip(axes, stages):
+        ax.imshow(pix[t])
+        ax.set_xticks([]); ax.set_yticks([])
+        for s in ax.spines.values():
+            s.set_visible(False)
+        ax.set_title(f'{label}  ($t$={t})', fontsize=9, pad=2)
+    fig.subplots_adjust(left=0.004, right=0.996, top=0.90, bottom=0.004,
+                        wspace=0.02)
+    out = RESULTS / 'fig_cube_task'
+    fig.savefig(f'{out}.pdf', bbox_inches='tight', pad_inches=0.01)
+    fig.savefig(f'{out}.png', dpi=200, bbox_inches='tight', pad_inches=0.01)
+    plt.close(fig)
+    print(f'wrote {out}.pdf (.png) — ep={ep} lift t={t_lift}')
+
+
 if __name__ == '__main__':
     import sys
     args = sys.argv[1:]
     if args and args[0] == 'grid':
         grid()
+    elif args and args[0] == 'task':
+        task(int(args[1]) if len(args) > 1 else 314)
     else:
         ep = int(args[0]) if args else 314
         main(ep)
