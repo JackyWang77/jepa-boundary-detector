@@ -1,0 +1,115 @@
+{
+  "hold_episodes": 300,
+  "part_b_cube_holdout": {
+    "hold_episodes": 300,
+    "tp": 1200,
+    "fp": 0,
+    "fn": 40,
+    "precision": 1.0,
+    "recall": 0.9677,
+    "f1": 0.9836,
+    "fires_per_episode": 4.0,
+    "false_fires_per_episode": 0.0
+  },
+  "part_d_tau_sweep_cube": [
+    {
+      "tau": 0.3,
+      "tp": 1200,
+      "fp": 0,
+      "fn": 40,
+      "precision": 1.0,
+      "recall": 0.9677,
+      "f1": 0.9836,
+      "fires_per_episode": 4.0,
+      "false_fires_per_episode": 0.0
+    },
+    {
+      "tau": 0.35,
+      "tp": 1200,
+      "fp": 0,
+      "fn": 40,
+      "precision": 1.0,
+      "recall": 0.9677,
+      "f1": 0.9836,
+      "fires_per_episode": 4.0,
+      "false_fires_per_episode": 0.0
+    },
+    {
+      "tau": 0.4,
+      "tp": 1200,
+      "fp": 0,
+      "fn": 40,
+      "precision": 1.0,
+      "recall": 0.9677,
+      "f1": 0.9836,
+      "fires_per_episode": 4.0,
+      "false_fires_per_episode": 0.0
+    },
+    {
+      "tau": 0.45,
+      "tp": 1200,
+      "fp": 0,
+      "fn": 40,
+      "precision": 1.0,
+      "recall": 0.9677,
+      "f1": 0.9836,
+      "fires_per_episode": 4.0,
+      "false_fires_per_episode": 0.0
+    },
+    {
+      "tau": 0.5,
+      "tp": 1200,
+      "fp": 0,
+      "fn": 40,
+      "precision": 1.0,
+      "recall": 0.9677,
+      "f1": 0.9836,
+      "fires_per_episode": 4.0,
+      "false_fires_per_episode": 0.0
+    },
+    {
+      "tau": 0.55,
+      "tp": 1200,
+      "fp": 0,
+      "fn": 40,
+      "precision": 1.0,
+      "recall": 0.9677,
+      "f1": 0.9836,
+      "fires_per_episode": 4.0,
+      "false_fires_per_episode": 0.0
+    },
+    {
+      "tau": 0.6,
+      "tp": 1200,
+      "fp": 0,
+      "fn": 40,
+      "precision": 1.0,
+      "recall": 0.9677,
+      "f1": 0.9836,
+      "fires_per_episode": 4.0,
+      "false_fires_per_episode": 0.0
+    },
+    {
+      "tau": 0.65,
+      "tp": 1200,
+      "fp": 0,
+      "fn": 40,
+      "precision": 1.0,
+      "recall": 0.9677,
+      "f1": 0.9836,
+      "fires_per_episode": 4.0,
+      "false_fires_per_episode": 0.0
+    },
+    {
+      "tau": 0.7,
+      "tp": 1200,
+      "fp": 0,
+      "fn": 40,
+      "precision": 1.0,
+      "recall": 0.9677,
+      "f1": 0.9836,
+      "fires_per_episode": 4.0,
+      "false_fires_per_episode": 0.0
+    }
+  ]
+}
