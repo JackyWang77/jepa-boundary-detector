@@ -42,6 +42,7 @@ def main():
     arms = {f'flat_h{h}': f'pusht_small_flat_h{h}' for h in (5, 10, 15)}
     arms['probe_zeroshot'] = 'pusht_small_probe'
     arms['probe2_redistill'] = 'pusht_small_probe2'
+    arms['pace_th050'] = 'pusht_small_pace_th050'
 
     table = {arm: {str(d): cell(pref, d) for d in (50, 75)}
              for arm, pref in arms.items()}
@@ -55,6 +56,8 @@ def main():
             table['probe2_redistill'][k], table['flat_h10'][k])
         tests[f'redistill_vs_zeroshot_d{d}'] = ztest(
             table['probe2_redistill'][k], table['probe_zeroshot'][k])
+        tests[f'probe2_vs_pace_d{d}'] = ztest(
+            table['probe2_redistill'][k], table['pace_th050'][k])
 
     summary = {
         'model': {'predictor_depth': 3, 'predictor_mlp_dim': 1024,
@@ -77,9 +80,13 @@ def main():
         'verdict': (
             'LIMITATION outcome per pre-registered rules: re-distilled probe '
             'matches best flat at d75 (n.s.) but clearly loses at d50 '
-            '(z=-3.46, p<0.001). Detector beats same-horizon flat h10 at both '
+            '(z=-3.43, p<0.001). Detector beats same-horizon flat h10 at both '
             'distances and re-distillation recovers ~4pt over zero-shot, yet '
-            'adaptive horizon cannot fully compensate halved capacity.'
+            'adaptive horizon cannot fully compensate halved capacity. '
+            'PACE theta=0.5 (h10 + phase truncation): d50 20.7 / d75 14.0 — '
+            'probe2 beats PACE at both distances but not significantly '
+            '(unlike the main model where the probe wins significantly), '
+            'consistent with the detector edge relying on prediction quality.'
         ),
     }
     with open(OUT / 'r2_small_summary.json', 'w') as f:

@@ -131,6 +131,28 @@
         "n": 450,
         "rate": 0.17777777777777778
       }
+    },
+    "pace_th050": {
+      "50": {
+        "per_seed": {
+          "42": 29,
+          "43": 32,
+          "44": 32
+        },
+        "successes": 93,
+        "n": 450,
+        "rate": 0.20666666666666667
+      },
+      "75": {
+        "per_seed": {
+          "42": 27,
+          "43": 16,
+          "44": 20
+        },
+        "successes": 63,
+        "n": 450,
+        "rate": 0.14
+      }
     }
   },
   "ztests": {
@@ -149,6 +171,11 @@
       "p1": 0.22444444444444445,
       "p2": 0.18222222222222223
     },
+    "probe2_vs_pace_d50": {
+      "z": 0.6484970819442053,
+      "p1": 0.22444444444444445,
+      "p2": 0.20666666666666667
+    },
     "probe2_vs_best_flat_d75": {
       "z": -0.2596659254782324,
       "p1": 0.17777777777777778,
@@ -163,7 +190,12 @@
       "z": 1.7423861545005377,
       "p1": 0.17777777777777778,
       "p2": 0.13555555555555557
+    },
+    "probe2_vs_pace_d75": {
+      "z": 1.5500803741385336,
+      "p1": 0.17777777777777778,
+      "p2": 0.14
     }
   },
-  "verdict": "LIMITATION outcome per pre-registered rules: re-distilled probe matches best flat at d75 (n.s.) but clearly loses at d50 (z=-3.46, p<0.001). Detector beats same-horizon flat h10 at both distances and re-distillation recovers ~4pt over zero-shot, yet adaptive horizon cannot fully compensate halved capacity."
+  "verdict": "LIMITATION outcome per pre-registered rules: re-distilled probe matches best flat at d75 (n.s.) but clearly loses at d50 (z=-3.43, p<0.001). Detector beats same-horizon flat h10 at both distances and re-distillation recovers ~4pt over zero-shot, yet adaptive horizon cannot fully compensate halved capacity. PACE theta=0.5 (h10 + phase truncation): d50 20.7 / d75 14.0 \u2014 probe2 beats PACE at both distances but not significantly (unlike the main model where the probe wins significantly), consistent with the detector edge relying on prediction quality."
 }
