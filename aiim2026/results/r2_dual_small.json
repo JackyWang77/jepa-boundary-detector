@@ -1,0 +1,125 @@
+{
+  "rhythm_max_micro_f1": 0.726,
+  "label_rate_train": 0.24049283260277218,
+  "data_pos_weight": 3.158128078817734,
+  "sweep": [
+    {
+      "head": "gru",
+      "pos_weight": 1.0,
+      "params": 1745,
+      "hold_auc": 0.7823483177129351,
+      "fire_micro_f1": 0.5608194622279129,
+      "tp_fp_fn": [
+        219,
+        15,
+        328
+      ],
+      "epochs": 162,
+      "seconds": 11.4
+    },
+    {
+      "head": "gru",
+      "pos_weight": 1.5,
+      "params": 1745,
+      "hold_auc": 0.7928643058092704,
+      "fire_micro_f1": 0.5891089108910891,
+      "tp_fp_fn": [
+        238,
+        23,
+        309
+      ],
+      "epochs": 153,
+      "seconds": 11.3
+    },
+    {
+      "head": "gru",
+      "pos_weight": 2.0,
+      "params": 1745,
+      "hold_auc": 0.7861503352648783,
+      "fire_micro_f1": 0.6376470588235295,
+      "tp_fp_fn": [
+        271,
+        32,
+        276
+      ],
+      "epochs": 113,
+      "seconds": 8.2
+    },
+    {
+      "head": "gru",
+      "pos_weight": 3.16,
+      "params": 1745,
+      "hold_auc": 0.7838151354340013,
+      "fire_micro_f1": 0.6711711711711712,
+      "tp_fp_fn": [
+        298,
+        43,
+        249
+      ],
+      "epochs": 126,
+      "seconds": 9.3
+    },
+    {
+      "head": "gru",
+      "pos_weight": 3.0,
+      "params": 1745,
+      "hold_auc": 0.7912565521652636,
+      "fire_micro_f1": 0.6689113355780022,
+      "tp_fp_fn": [
+        298,
+        46,
+        249
+      ],
+      "epochs": 123,
+      "seconds": 8.6
+    },
+    {
+      "head": "cnn",
+      "pos_weight": 1.5,
+      "params": 2769,
+      "hold_auc": 0.7952591323767759,
+      "fire_micro_f1": 0.6206896551724138,
+      "tp_fp_fn": [
+        261,
+        33,
+        286
+      ],
+      "epochs": 154,
+      "seconds": 12.6
+    },
+    {
+      "head": "cnn",
+      "pos_weight": 3.16,
+      "params": 2769,
+      "hold_auc": 0.7938898856792842,
+      "fire_micro_f1": 0.6629213483146067,
+      "tp_fp_fn": [
+        295,
+        48,
+        252
+      ],
+      "epochs": 136,
+      "seconds": 10.8
+    }
+  ],
+  "selected": {
+    "head": "cnn",
+    "pos_weight": 1.5,
+    "params": 2769,
+    "hold_auc": 0.7952591323767759,
+    "fire_micro_f1": 0.6206896551724138,
+    "tp_fp_fn": [
+      261,
+      33,
+      286
+    ],
+    "epochs": 154,
+    "seconds": 12.6
+  },
+  "gates": {
+    "auc_gate": 0.7,
+    "f1_gate": 0.745,
+    "rhythm_max": 0.726
+  },
+  "verdict": "PARTIAL"
+}

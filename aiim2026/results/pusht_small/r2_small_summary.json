@@ -1,0 +1,169 @@
+{
+  "model": {
+    "predictor_depth": 3,
+    "predictor_mlp_dim": 1024,
+    "params": 11460000,
+    "train_budget": "60 epochs x 5000 batches (eff. batch 128), 8.1 h on RTX 4060",
+    "note": "main model: depth 6 / mlp 2048, same encoder"
+  },
+  "protocol": {
+    "episodes_per_run": 150,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "eval_budget": "2 x goal_offset",
+    "history_len": 3,
+    "action_block": 5
+  },
+  "detector": {
+    "zeroshot": "main-model dual head (r2_meta_dual.json) transferred as-is",
+    "redistill": "head retrained on small-model features (r2_dual_small_meta.json): CNN, AUC 0.795, fire micro-F1 0.621 (PARTIAL)"
+  },
+  "table": {
+    "flat_h5": {
+      "50": {
+        "per_seed": {
+          "42": 52,
+          "43": 46,
+          "44": 49
+        },
+        "successes": 147,
+        "n": 450,
+        "rate": 0.32666666666666666
+      },
+      "75": {
+        "per_seed": {
+          "42": 28,
+          "43": 26,
+          "44": 29
+        },
+        "successes": 83,
+        "n": 450,
+        "rate": 0.18444444444444444
+      }
+    },
+    "flat_h10": {
+      "50": {
+        "per_seed": {
+          "42": 30,
+          "43": 30,
+          "44": 31
+        },
+        "successes": 91,
+        "n": 450,
+        "rate": 0.20222222222222222
+      },
+      "75": {
+        "per_seed": {
+          "42": 19,
+          "43": 18,
+          "44": 20
+        },
+        "successes": 57,
+        "n": 450,
+        "rate": 0.12666666666666668
+      }
+    },
+    "flat_h15": {
+      "50": {
+        "per_seed": {
+          "42": 14,
+          "43": 18,
+          "44": 14
+        },
+        "successes": 46,
+        "n": 450,
+        "rate": 0.10222222222222223
+      },
+      "75": {
+        "per_seed": {
+          "42": 15,
+          "43": 7,
+          "44": 12
+        },
+        "successes": 34,
+        "n": 450,
+        "rate": 0.07555555555555556
+      }
+    },
+    "probe_zeroshot": {
+      "50": {
+        "per_seed": {
+          "42": 28,
+          "43": 24,
+          "44": 30
+        },
+        "successes": 82,
+        "n": 450,
+        "rate": 0.18222222222222223
+      },
+      "75": {
+        "per_seed": {
+          "42": 19,
+          "43": 17,
+          "44": 25
+        },
+        "successes": 61,
+        "n": 450,
+        "rate": 0.13555555555555557
+      }
+    },
+    "probe2_redistill": {
+      "50": {
+        "per_seed": {
+          "42": 43,
+          "43": 31,
+          "44": 27
+        },
+        "successes": 101,
+        "n": 450,
+        "rate": 0.22444444444444445
+      },
+      "75": {
+        "per_seed": {
+          "42": 17,
+          "43": 32,
+          "44": 31
+        },
+        "successes": 80,
+        "n": 450,
+        "rate": 0.17777777777777778
+      }
+    }
+  },
+  "ztests": {
+    "probe2_vs_best_flat_d50": {
+      "z": -3.431859093483044,
+      "p1": 0.22444444444444445,
+      "p2": 0.32666666666666666
+    },
+    "probe2_vs_same_horizon_flat_h10_d50": {
+      "z": 0.8136806936301493,
+      "p1": 0.22444444444444445,
+      "p2": 0.20222222222222222
+    },
+    "redistill_vs_zeroshot_d50": {
+      "z": 1.57358328218658,
+      "p1": 0.22444444444444445,
+      "p2": 0.18222222222222223
+    },
+    "probe2_vs_best_flat_d75": {
+      "z": -0.2596659254782324,
+      "p1": 0.17777777777777778,
+      "p2": 0.18444444444444444
+    },
+    "probe2_vs_same_horizon_flat_h10_d75": {
+      "z": 2.134157849613428,
+      "p1": 0.17777777777777778,
+      "p2": 0.12666666666666668
+    },
+    "redistill_vs_zeroshot_d75": {
+      "z": 1.7423861545005377,
+      "p1": 0.17777777777777778,
+      "p2": 0.13555555555555557
+    }
+  },
+  "verdict": "LIMITATION outcome per pre-registered rules: re-distilled probe matches best flat at d75 (n.s.) but clearly loses at d50 (z=-3.46, p<0.001). Detector beats same-horizon flat h10 at both distances and re-distillation recovers ~4pt over zero-shot, yet adaptive horizon cannot fully compensate halved capacity."
+}

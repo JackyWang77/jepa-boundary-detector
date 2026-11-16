@@ -1,0 +1,6322 @@
+{
+  "arm": "probe_t",
+  "goal_offset_steps": 50,
+  "eval_budget": 100,
+  "seed": 42,
+  "interval": 0,
+  "success_rate": 28.666666666666668,
+  "episode_successes": [
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    true,
+    true,
+    false,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false,
+    true,
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    false,
+    true,
+    false,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "replan_logs": {
+    "0": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.3719
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.3365
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3719
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3365
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.7897
+          }
+        ]
+      }
+    ],
+    "1": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.276
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.276
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.7163
+          }
+        ]
+      }
+    ],
+    "2": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 5,
+            "pmax": 0.8946
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.4549
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.8946
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4549
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.7437
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.9548
+          }
+        ]
+      }
+    ],
+    "3": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 10,
+            "pmax": 0.1701
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.2672
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1701
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2672
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.5428
+          }
+        ]
+      }
+    ],
+    "4": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.3787
+          },
+          {
+            "block": 11,
+            "T": 5,
+            "pmax": 0.5062
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3483
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3787
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5062
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3483
+          }
+        ],
+        "fires": [
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.5322
+          }
+        ]
+      }
+    ],
+    "5": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.4539
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.2768
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4539
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2768
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.8684
+          }
+        ]
+      }
+    ],
+    "6": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.3349
+          },
+          {
+            "block": 13,
+            "T": 10,
+            "pmax": 0.2454
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3349
+          },
+          {
+            "block": 13,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2454
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.5263
+          },
+          {
+            "block": 13,
+            "type": "real_fire",
+            "p": 0.9631
+          }
+        ]
+      }
+    ],
+    "7": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.2016
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.2506
+          },
+          {
+            "block": 19,
+            "T": 10,
+            "pmax": 0.1523
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2016
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2506
+          },
+          {
+            "block": 19,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1523
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.7315
+          },
+          {
+            "block": 19,
+            "type": "real_fire",
+            "p": 0.9675
+          }
+        ]
+      }
+    ],
+    "8": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.357
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.3163
+          },
+          {
+            "block": 19,
+            "T": 5,
+            "pmax": 0.5524
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.357
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3163
+          },
+          {
+            "block": 19,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5524
+          }
+        ],
+        "fires": [
+          {
+            "block": 19,
+            "type": "real_fire",
+            "p": 0.5681
+          }
+        ]
+      }
+    ],
+    "9": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 5,
+            "pmax": 0.5828
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.2221
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.2264
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5828
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2221
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2264
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.6713
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.9254
+          }
+        ]
+      }
+    ],
+    "10": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.39
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3569
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.2195
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.39
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3569
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2195
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.5972
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.9494
+          }
+        ]
+      }
+    ],
+    "11": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.294
+          },
+          {
+            "block": 13,
+            "T": 10,
+            "pmax": 0.4237
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.3204
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.294
+          },
+          {
+            "block": 13,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4237
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3204
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.7501
+          },
+          {
+            "block": 13,
+            "type": "real_fire",
+            "p": 0.5439
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.6795
+          }
+        ]
+      }
+    ],
+    "12": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.2628
+          },
+          {
+            "block": 11,
+            "T": 10,
+            "pmax": 0.2536
+          },
+          {
+            "block": 16,
+            "T": 5,
+            "pmax": 0.5607
+          },
+          {
+            "block": 18,
+            "T": 5,
+            "pmax": 0.5607
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2628
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2536
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5607
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5607
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.5918
+          },
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.9689
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.8198
+          }
+        ]
+      }
+    ],
+    "13": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 5,
+            "pmax": 0.6786
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.214
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3802
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6786
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.214
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3802
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.7096
+          },
+          {
+            "block": 16,
+            "type": "real_fire",
+            "p": 0.8322
+          }
+        ]
+      }
+    ],
+    "14": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 10,
+            "pmax": 0.2374
+          },
+          {
+            "block": 14,
+            "T": 5,
+            "pmax": 0.7708
+          },
+          {
+            "block": 16,
+            "T": 5,
+            "pmax": 0.6237
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2374
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7708
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6237
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.8197
+          },
+          {
+            "block": 16,
+            "type": "real_fire",
+            "p": 0.9702
+          }
+        ]
+      }
+    ],
+    "15": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.3718
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.3068
+          },
+          {
+            "block": 19,
+            "T": 10,
+            "pmax": 0.3255
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3718
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3068
+          },
+          {
+            "block": 19,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3255
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.9373
+          },
+          {
+            "block": 14,
+            "type": "real_fire",
+            "p": 0.5724
+          },
+          {
+            "block": 19,
+            "type": "real_fire",
+            "p": 0.6224
+          }
+        ]
+      }
+    ],
+    "16": [],
+    "17": [],
+    "18": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 5,
+            "pmax": 0.6904
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6904
+          }
+        ],
+        "fires": []
+      }
+    ],
+    "19": [],
+    "20": [],
+    "21": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 7,
+            "pmax": 0.5621
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 7,
+            "p": 0.5621
+          }
+        ],
+        "fires": []
+      }
+    ],
+    "22": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.298
+          },
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.0703
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.298
+          },
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.0703
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.5892
+          },
+          {
+            "block": 10,
+            "type": "real_fire",
+            "p": 0.8449
+          }
+        ]
+      }
+    ],
+    "23": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.4352
+          },
+          {
+            "block": 12,
+            "T": 5,
+            "pmax": 0.6721
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.339
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4352
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6721
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.339
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.9582
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.9896
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.5076
+          }
+        ]
+      }
+    ],
+    "24": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 10,
+            "pmax": 0.2959
+          },
+          {
+            "block": 17,
+            "T": 5,
+            "pmax": 0.6993
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2959
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6993
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.7409
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.8325
+          }
+        ]
+      }
+    ],
+    "25": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 5,
+            "pmax": 0.708
+          },
+          {
+            "block": 12,
+            "T": 5,
+            "pmax": 0.7068
+          },
+          {
+            "block": 18,
+            "T": 5,
+            "pmax": 0.7921
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.708
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7068
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7921
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.6465
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.5413
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.9771
+          }
+        ]
+      }
+    ],
+    "26": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 10,
+            "pmax": 0.2898
+          },
+          {
+            "block": 14,
+            "T": 5,
+            "pmax": 0.8919
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2898
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.8919
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.9471
+          }
+        ]
+      }
+    ],
+    "27": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.3166
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.1678
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.4552
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3166
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1678
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4552
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.5926
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.8616
+          }
+        ]
+      }
+    ],
+    "28": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.4584
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.418
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4584
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.418
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.9117
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.5708
+          }
+        ]
+      }
+    ],
+    "29": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 5,
+            "pmax": 0.5177
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.2015
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5177
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2015
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.8808
+          }
+        ]
+      }
+    ],
+    "30": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.2914
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3747
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2914
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3747
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.8303
+          }
+        ]
+      }
+    ],
+    "31": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2998
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2998
+          }
+        ],
+        "fires": []
+      }
+    ],
+    "32": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.3208
+          },
+          {
+            "block": 12,
+            "T": 5,
+            "pmax": 0.5496
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3208
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5496
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.5477
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.6851
+          }
+        ]
+      }
+    ],
+    "33": [],
+    "34": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.1908
+          },
+          {
+            "block": 15,
+            "T": 5,
+            "pmax": 0.9156
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1908
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.9156
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.6348
+          }
+        ]
+      }
+    ],
+    "35": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.2922
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2922
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.5269
+          }
+        ]
+      }
+    ],
+    "36": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 10,
+            "pmax": 0.3667
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.2956
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3667
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2956
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.5794
+          }
+        ]
+      }
+    ],
+    "37": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.4258
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3576
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4258
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3576
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.5559
+          }
+        ]
+      }
+    ],
+    "38": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2702
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.387
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2702
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.387
+          }
+        ],
+        "fires": [
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.8902
+          }
+        ]
+      }
+    ],
+    "39": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.2755
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3315
+          },
+          {
+            "block": 19,
+            "T": 10,
+            "pmax": 0.4916
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2755
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3315
+          },
+          {
+            "block": 19,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4916
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.7041
+          },
+          {
+            "block": 19,
+            "type": "real_fire",
+            "p": 0.8481
+          }
+        ]
+      }
+    ],
+    "40": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.4842
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.3192
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.2633
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4842
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3192
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2633
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.8561
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.5517
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.8695
+          }
+        ]
+      }
+    ],
+    "41": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 5,
+            "pmax": 0.5032
+          },
+          {
+            "block": 14,
+            "T": 5,
+            "pmax": 0.6259
+          },
+          {
+            "block": 15,
+            "T": 8,
+            "pmax": 0.5256
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5032
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6259
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 8,
+            "p": 0.5256
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.9684
+          },
+          {
+            "block": 15,
+            "type": "real_fire",
+            "p": 0.5816
+          }
+        ]
+      }
+    ],
+    "42": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.3272
+          },
+          {
+            "block": 11,
+            "T": 10,
+            "pmax": 0.4601
+          },
+          {
+            "block": 16,
+            "T": 5,
+            "pmax": 0.8505
+          },
+          {
+            "block": 18,
+            "T": 5,
+            "pmax": 0.665
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3272
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4601
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.8505
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.665
+          }
+        ],
+        "fires": [
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.8038
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.9881
+          }
+        ]
+      }
+    ],
+    "43": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.2762
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2762
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.9222
+          }
+        ]
+      }
+    ],
+    "44": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 10,
+            "pmax": 0.1762
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.273
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1762
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.273
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.9556
+          },
+          {
+            "block": 15,
+            "type": "real_fire",
+            "p": 0.8542
+          }
+        ]
+      }
+    ],
+    "45": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.461
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3679
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.461
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3679
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.9929
+          },
+          {
+            "block": 16,
+            "type": "real_fire",
+            "p": 0.7327
+          }
+        ]
+      }
+    ],
+    "46": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.2436
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.3651
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2436
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3651
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.9601
+          },
+          {
+            "block": 15,
+            "type": "real_fire",
+            "p": 0.6093
+          }
+        ]
+      }
+    ],
+    "47": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.3861
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.2376
+          },
+          {
+            "block": 19,
+            "T": 10,
+            "pmax": 0.4954
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3861
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2376
+          },
+          {
+            "block": 19,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4954
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.7658
+          },
+          {
+            "block": 19,
+            "type": "real_fire",
+            "p": 0.515
+          }
+        ]
+      }
+    ],
+    "48": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2747
+          },
+          {
+            "block": 11,
+            "T": 10,
+            "pmax": 0.245
+          },
+          {
+            "block": 16,
+            "T": 5,
+            "pmax": 0.6313
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2747
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.245
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6313
+          }
+        ],
+        "fires": [
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.5776
+          }
+        ]
+      }
+    ],
+    "49": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.3045
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.3038
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.4157
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3045
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3038
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4157
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.5944
+          },
+          {
+            "block": 16,
+            "type": "real_fire",
+            "p": 0.5299
+          }
+        ]
+      }
+    ],
+    "50": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 5,
+            "pmax": 0.6639
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.1157
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6639
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1157
+          }
+        ],
+        "fires": [
+          {
+            "block": 14,
+            "type": "real_fire",
+            "p": 0.7189
+          }
+        ]
+      }
+    ],
+    "51": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2143
+          },
+          {
+            "block": 11,
+            "T": 10,
+            "pmax": 0.3235
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.343
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2143
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3235
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.343
+          }
+        ],
+        "fires": [
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.8504
+          }
+        ]
+      }
+    ],
+    "52": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.2666
+          },
+          {
+            "block": 10,
+            "T": 5,
+            "pmax": 0.5491
+          },
+          {
+            "block": 15,
+            "T": 5,
+            "pmax": 0.6185
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.1847
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2666
+          },
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5491
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6185
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1847
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.7766
+          },
+          {
+            "block": 10,
+            "type": "real_fire",
+            "p": 0.5379
+          },
+          {
+            "block": 16,
+            "type": "real_fire",
+            "p": 0.9906
+          }
+        ]
+      }
+    ],
+    "53": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.4179
+          },
+          {
+            "block": 14,
+            "T": 5,
+            "pmax": 0.9408
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4179
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.9408
+          }
+        ],
+        "fires": [
+          {
+            "block": 14,
+            "type": "real_fire",
+            "p": 0.9132
+          }
+        ]
+      }
+    ],
+    "54": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 10,
+            "pmax": 0.1694
+          },
+          {
+            "block": 18,
+            "T": 5,
+            "pmax": 0.6361
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1694
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6361
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.8783
+          }
+        ]
+      }
+    ],
+    "55": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2899
+          },
+          {
+            "block": 14,
+            "T": 5,
+            "pmax": 0.5932
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2899
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5932
+          }
+        ],
+        "fires": [
+          {
+            "block": 14,
+            "type": "real_fire",
+            "p": 0.9938
+          }
+        ]
+      }
+    ],
+    "56": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.2083
+          },
+          {
+            "block": 11,
+            "T": 10,
+            "pmax": 0.4282
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2083
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4282
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.5526
+          },
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.9258
+          }
+        ]
+      }
+    ],
+    "57": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.1039
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.2655
+          },
+          {
+            "block": 18,
+            "T": 5,
+            "pmax": 0.5052
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1039
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2655
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5052
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.6183
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.7198
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.53
+          }
+        ]
+      }
+    ],
+    "58": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.4997
+          },
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.3611
+          },
+          {
+            "block": 15,
+            "T": 5,
+            "pmax": 0.6215
+          },
+          {
+            "block": 19,
+            "T": 5,
+            "pmax": 0.6215
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4997
+          },
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3611
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6215
+          },
+          {
+            "block": 19,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6215
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.9042
+          },
+          {
+            "block": 10,
+            "type": "real_fire",
+            "p": 0.6784
+          },
+          {
+            "block": 19,
+            "type": "real_fire",
+            "p": 0.507
+          }
+        ]
+      }
+    ],
+    "59": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.2265
+          },
+          {
+            "block": 13,
+            "T": 10,
+            "pmax": 0.323
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2265
+          },
+          {
+            "block": 13,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.323
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.7181
+          },
+          {
+            "block": 13,
+            "type": "real_fire",
+            "p": 0.7714
+          }
+        ]
+      }
+    ],
+    "60": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.3657
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.2496
+          },
+          {
+            "block": 19,
+            "T": 10,
+            "pmax": 0.2585
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3657
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2496
+          },
+          {
+            "block": 19,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2585
+          }
+        ],
+        "fires": [
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.8177
+          },
+          {
+            "block": 19,
+            "type": "real_fire",
+            "p": 0.8402
+          }
+        ]
+      }
+    ],
+    "61": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.3516
+          },
+          {
+            "block": 13,
+            "T": 10,
+            "pmax": 0.3581
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.2291
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3516
+          },
+          {
+            "block": 13,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3581
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2291
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.7141
+          },
+          {
+            "block": 13,
+            "type": "real_fire",
+            "p": 0.9108
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.5836
+          }
+        ]
+      }
+    ],
+    "62": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 5,
+            "pmax": 0.6577
+          },
+          {
+            "block": 11,
+            "T": 10,
+            "pmax": 0.5698
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6577
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.5698
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.5691
+          },
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.9532
+          }
+        ]
+      }
+    ],
+    "63": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.1816
+          },
+          {
+            "block": 13,
+            "T": 10,
+            "pmax": 0.1574
+          },
+          {
+            "block": 19,
+            "T": 5,
+            "pmax": 0.6287
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1816
+          },
+          {
+            "block": 13,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1574
+          },
+          {
+            "block": 19,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6287
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.6857
+          },
+          {
+            "block": 13,
+            "type": "real_fire",
+            "p": 0.8843
+          },
+          {
+            "block": 19,
+            "type": "real_fire",
+            "p": 0.9462
+          }
+        ]
+      }
+    ],
+    "64": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2483
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.3414
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2483
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3414
+          }
+        ],
+        "fires": [
+          {
+            "block": 14,
+            "type": "real_fire",
+            "p": 0.8924
+          }
+        ]
+      }
+    ],
+    "65": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2338
+          },
+          {
+            "block": 13,
+            "T": 10,
+            "pmax": 0.4935
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2338
+          },
+          {
+            "block": 13,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4935
+          }
+        ],
+        "fires": [
+          {
+            "block": 13,
+            "type": "real_fire",
+            "p": 0.9996
+          }
+        ]
+      }
+    ],
+    "66": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 5,
+            "pmax": 0.5214
+          },
+          {
+            "block": 11,
+            "T": 10,
+            "pmax": 0.315
+          },
+          {
+            "block": 16,
+            "T": 5,
+            "pmax": 0.7622
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.2737
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5214
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.315
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7622
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2737
+          }
+        ],
+        "fires": [
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.9594
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.6312
+          }
+        ]
+      }
+    ],
+    "67": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 10,
+            "pmax": 0.4454
+          },
+          {
+            "block": 15,
+            "T": 5,
+            "pmax": 0.7085
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4454
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7085
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.6613
+          },
+          {
+            "block": 15,
+            "type": "real_fire",
+            "p": 0.9978
+          }
+        ]
+      }
+    ],
+    "68": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 10,
+            "pmax": 0.3293
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3293
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.818
+          }
+        ]
+      }
+    ],
+    "69": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 5,
+            "pmax": 0.8217
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.4909
+          },
+          {
+            "block": 17,
+            "T": 5,
+            "pmax": 0.551
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.8217
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4909
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.551
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.8617
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.6511
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.5329
+          }
+        ]
+      }
+    ],
+    "70": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2702
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.1563
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2702
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1563
+          }
+        ],
+        "fires": [
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.6212
+          }
+        ]
+      }
+    ],
+    "71": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.3366
+          },
+          {
+            "block": 11,
+            "T": 5,
+            "pmax": 0.5484
+          },
+          {
+            "block": 16,
+            "T": 5,
+            "pmax": 0.7566
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.3423
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3366
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5484
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7566
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3423
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.7518
+          },
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.6649
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.8771
+          }
+        ]
+      }
+    ],
+    "72": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 5,
+            "pmax": 0.6454
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.4084
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6454
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4084
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.722
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.9542
+          }
+        ]
+      }
+    ],
+    "73": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.1006
+          },
+          {
+            "block": 11,
+            "T": 10,
+            "pmax": 0.3207
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3407
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.4168
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1006
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3207
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3407
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4168
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.6051
+          },
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.8295
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.9991
+          }
+        ]
+      }
+    ],
+    "74": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.301
+          },
+          {
+            "block": 11,
+            "T": 10,
+            "pmax": 0.3017
+          },
+          {
+            "block": 16,
+            "T": 5,
+            "pmax": 0.6943
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.3487
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.301
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3017
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6943
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3487
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.7873
+          },
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.7707
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.8784
+          }
+        ]
+      }
+    ],
+    "75": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 5,
+            "pmax": 0.7472
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.1918
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7472
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1918
+          }
+        ],
+        "fires": [
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.8573
+          }
+        ]
+      }
+    ],
+    "76": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.3406
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.3148
+          },
+          {
+            "block": 19,
+            "T": 10,
+            "pmax": 0.2165
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3406
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3148
+          },
+          {
+            "block": 19,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2165
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.5956
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.5223
+          },
+          {
+            "block": 19,
+            "type": "real_fire",
+            "p": 0.8285
+          }
+        ]
+      }
+    ],
+    "77": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 10,
+            "pmax": 0.4231
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.2886
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4231
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2886
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.7652
+          }
+        ]
+      }
+    ],
+    "78": [
+      {
+        "probes": [
+          {
+            "block": 4,
+            "T": 10,
+            "pmax": 0.4179
+          },
+          {
+            "block": 9,
+            "T": 10,
+            "pmax": 0.2238
+          },
+          {
+            "block": 14,
+            "T": 5,
+            "pmax": 0.6567
+          },
+          {
+            "block": 15,
+            "T": 5,
+            "pmax": 0.5976
+          }
+        ],
+        "replans": [
+          {
+            "block": 4,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4179
+          },
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2238
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6567
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5976
+          }
+        ],
+        "fires": [
+          {
+            "block": 4,
+            "type": "real_fire",
+            "p": 0.5955
+          },
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.7084
+          },
+          {
+            "block": 15,
+            "type": "real_fire",
+            "p": 0.9783
+          }
+        ]
+      }
+    ],
+    "79": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.3637
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.467
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.2814
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3637
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.467
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2814
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.6234
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.9935
+          }
+        ]
+      }
+    ],
+    "80": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 10,
+            "pmax": 0.249
+          },
+          {
+            "block": 13,
+            "T": 10,
+            "pmax": 0.3372
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.249
+          },
+          {
+            "block": 13,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3372
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.8108
+          },
+          {
+            "block": 13,
+            "type": "real_fire",
+            "p": 0.7186
+          }
+        ]
+      }
+    ],
+    "81": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.3054
+          },
+          {
+            "block": 11,
+            "T": 10,
+            "pmax": 0.3554
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.1804
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3054
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3554
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1804
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.8964
+          },
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.8959
+          }
+        ]
+      }
+    ],
+    "82": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.3203
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3203
+          }
+        ],
+        "fires": []
+      }
+    ],
+    "83": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2317
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2317
+          }
+        ],
+        "fires": []
+      }
+    ],
+    "84": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 10,
+            "pmax": 0.2826
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2826
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.5597
+          }
+        ]
+      }
+    ],
+    "85": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.2296
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.1972
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2296
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1972
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.7889
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.809
+          }
+        ]
+      }
+    ],
+    "86": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.1757
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1757
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.6422
+          }
+        ]
+      }
+    ],
+    "87": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2445
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.4517
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2445
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4517
+          }
+        ],
+        "fires": [
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.9732
+          }
+        ]
+      }
+    ],
+    "88": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 10,
+            "pmax": 0.2197
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.3022
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.397
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2197
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3022
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.397
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.7282
+          },
+          {
+            "block": 16,
+            "type": "real_fire",
+            "p": 0.6653
+          }
+        ]
+      }
+    ],
+    "89": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 5,
+            "pmax": 0.8291
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.3564
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.8291
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3564
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.6044
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.6234
+          }
+        ]
+      }
+    ],
+    "90": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.2591
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2591
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.9911
+          }
+        ]
+      }
+    ],
+    "91": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.3111
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.2641
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3111
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2641
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.8207
+          },
+          {
+            "block": 15,
+            "type": "real_fire",
+            "p": 0.7821
+          }
+        ]
+      }
+    ],
+    "92": [],
+    "93": [],
+    "94": [],
+    "95": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.1964
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3628
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1964
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3628
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.5224
+          }
+        ]
+      }
+    ],
+    "96": [],
+    "97": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.327
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3008
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.327
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3008
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.6348
+          }
+        ]
+      }
+    ],
+    "98": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 5,
+            "pmax": 0.5488
+          },
+          {
+            "block": 12,
+            "T": 5,
+            "pmax": 0.5488
+          },
+          {
+            "block": 17,
+            "T": 5,
+            "pmax": 0.5488
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5488
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5488
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5488
+          }
+        ],
+        "fires": [
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.5008
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.7142
+          }
+        ]
+      }
+    ],
+    "99": [
+      {
+        "probes": [
+          {
+            "block": 4,
+            "T": 10,
+            "pmax": 0.1746
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.2878
+          },
+          {
+            "block": 17,
+            "T": 5,
+            "pmax": 0.8017
+          }
+        ],
+        "replans": [
+          {
+            "block": 4,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1746
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2878
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.8017
+          }
+        ],
+        "fires": [
+          {
+            "block": 4,
+            "type": "real_fire",
+            "p": 0.5105
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.9404
+          }
+        ]
+      }
+    ],
+    "100": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 5,
+            "pmax": 0.5622
+          },
+          {
+            "block": 16,
+            "T": 5,
+            "pmax": 0.5084
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5622
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5084
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.7489
+          }
+        ]
+      }
+    ],
+    "101": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 5,
+            "pmax": 0.7799
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.2218
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7799
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2218
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.847
+          }
+        ]
+      }
+    ],
+    "102": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.1225
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3152
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.4905
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1225
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3152
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4905
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.5459
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.8796
+          }
+        ]
+      }
+    ],
+    "103": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 5,
+            "pmax": 0.5727
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.2713
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5727
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2713
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.8576
+          }
+        ]
+      }
+    ],
+    "104": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 5,
+            "pmax": 0.5157
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5157
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.8983
+          }
+        ]
+      }
+    ],
+    "105": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.3176
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.2993
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3176
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2993
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.8912
+          }
+        ]
+      }
+    ],
+    "106": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 8,
+            "pmax": 0.5998
+          },
+          {
+            "block": 14,
+            "T": 5,
+            "pmax": 0.6469
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 8,
+            "p": 0.5998
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6469
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.9012
+          },
+          {
+            "block": 14,
+            "type": "real_fire",
+            "p": 0.9081
+          }
+        ]
+      }
+    ],
+    "107": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.1981
+          },
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2114
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.3702
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.233
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1981
+          },
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2114
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3702
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.233
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.8542
+          },
+          {
+            "block": 10,
+            "type": "real_fire",
+            "p": 0.8835
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.8447
+          }
+        ]
+      }
+    ],
+    "108": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.2197
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2197
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.7461
+          }
+        ]
+      }
+    ],
+    "109": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.3077
+          },
+          {
+            "block": 13,
+            "T": 10,
+            "pmax": 0.437
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3077
+          },
+          {
+            "block": 13,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.437
+          }
+        ],
+        "fires": [
+          {
+            "block": 13,
+            "type": "real_fire",
+            "p": 0.5545
+          }
+        ]
+      }
+    ],
+    "110": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 7,
+            "pmax": 0.6771
+          },
+          {
+            "block": 11,
+            "T": 5,
+            "pmax": 0.6803
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.4987
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.2773
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 7,
+            "p": 0.6771
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6803
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4987
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2773
+          }
+        ],
+        "fires": [
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.6135
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.5771
+          }
+        ]
+      }
+    ],
+    "111": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.3376
+          },
+          {
+            "block": 16,
+            "T": 5,
+            "pmax": 0.7399
+          },
+          {
+            "block": 17,
+            "T": 5,
+            "pmax": 0.507
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3376
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7399
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.507
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.8051
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.9752
+          }
+        ]
+      }
+    ],
+    "112": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.3857
+          },
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.3374
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.4205
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.342
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3857
+          },
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3374
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4205
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.342
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.8138
+          },
+          {
+            "block": 10,
+            "type": "real_fire",
+            "p": 0.5432
+          },
+          {
+            "block": 16,
+            "type": "real_fire",
+            "p": 0.7185
+          }
+        ]
+      }
+    ],
+    "113": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.3364
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.2952
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3364
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2952
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.7807
+          },
+          {
+            "block": 14,
+            "type": "real_fire",
+            "p": 0.5096
+          }
+        ]
+      }
+    ],
+    "114": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 10,
+            "pmax": 0.3722
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3722
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.635
+          }
+        ]
+      }
+    ],
+    "115": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 10,
+            "pmax": 0.2464
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.349
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2464
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.349
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.5725
+          }
+        ]
+      }
+    ],
+    "116": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.3746
+          },
+          {
+            "block": 11,
+            "T": 10,
+            "pmax": 0.222
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3746
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.222
+          }
+        ],
+        "fires": [
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.8875
+          }
+        ]
+      }
+    ],
+    "117": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 5,
+            "pmax": 0.6459
+          },
+          {
+            "block": 14,
+            "T": 5,
+            "pmax": 0.6459
+          },
+          {
+            "block": 15,
+            "T": 5,
+            "pmax": 0.6459
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6459
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6459
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6459
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.9227
+          },
+          {
+            "block": 15,
+            "type": "real_fire",
+            "p": 0.7197
+          }
+        ]
+      }
+    ],
+    "118": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 5,
+            "pmax": 0.7105
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.4926
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7105
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4926
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.675
+          }
+        ]
+      }
+    ],
+    "119": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.2176
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.4136
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.3365
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2176
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4136
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3365
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.5505
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.9768
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.6505
+          }
+        ]
+      }
+    ],
+    "120": [
+      {
+        "probes": [
+          {
+            "block": 4,
+            "T": 5,
+            "pmax": 0.9714
+          },
+          {
+            "block": 14,
+            "T": 5,
+            "pmax": 0.835
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.4908
+          }
+        ],
+        "replans": [
+          {
+            "block": 4,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.9714
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.835
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4908
+          }
+        ],
+        "fires": [
+          {
+            "block": 4,
+            "type": "real_fire",
+            "p": 0.879
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.5808
+          }
+        ]
+      }
+    ],
+    "121": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.1384
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.3251
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1384
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3251
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.5876
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.6245
+          }
+        ]
+      }
+    ],
+    "122": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.2154
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.1966
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2154
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1966
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.511
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.6836
+          }
+        ]
+      }
+    ],
+    "123": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 5,
+            "pmax": 0.7039
+          },
+          {
+            "block": 13,
+            "T": 10,
+            "pmax": 0.1995
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7039
+          },
+          {
+            "block": 13,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1995
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.5237
+          },
+          {
+            "block": 13,
+            "type": "real_fire",
+            "p": 0.9664
+          }
+        ]
+      }
+    ],
+    "124": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2227
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.1659
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2227
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1659
+          }
+        ],
+        "fires": [
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.9143
+          }
+        ]
+      }
+    ],
+    "125": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.2694
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.2213
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2694
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2213
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.5833
+          }
+        ]
+      }
+    ],
+    "126": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 5,
+            "pmax": 0.8838
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.4972
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.8838
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4972
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.5011
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.736
+          }
+        ]
+      }
+    ],
+    "127": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 5,
+            "pmax": 0.6543
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.2536
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6543
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2536
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.9865
+          }
+        ]
+      }
+    ],
+    "128": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.2297
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.2793
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2297
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2793
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.6555
+          },
+          {
+            "block": 14,
+            "type": "real_fire",
+            "p": 0.6764
+          }
+        ]
+      }
+    ],
+    "129": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.2178
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.3549
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2178
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3549
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.8519
+          }
+        ]
+      }
+    ],
+    "130": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 5,
+            "pmax": 0.5349
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.2788
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5349
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2788
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.5348
+          }
+        ]
+      }
+    ],
+    "131": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.3459
+          },
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.3997
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.3855
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3459
+          },
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3997
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3855
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.8974
+          },
+          {
+            "block": 10,
+            "type": "real_fire",
+            "p": 0.7673
+          }
+        ]
+      }
+    ],
+    "132": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 5,
+            "pmax": 0.8583
+          },
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.3169
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.8583
+          },
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3169
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.9731
+          },
+          {
+            "block": 10,
+            "type": "real_fire",
+            "p": 0.5148
+          }
+        ]
+      }
+    ],
+    "133": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 5,
+            "pmax": 0.9012
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.1501
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.9012
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1501
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.5561
+          }
+        ]
+      }
+    ],
+    "134": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.3125
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.226
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3125
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.226
+          }
+        ],
+        "fires": []
+      }
+    ],
+    "135": [
+      {
+        "probes": [
+          {
+            "block": 5,
+            "T": 10,
+            "pmax": 0.1537
+          },
+          {
+            "block": 15,
+            "T": 5,
+            "pmax": 0.8519
+          },
+          {
+            "block": 17,
+            "T": 5,
+            "pmax": 0.9511
+          }
+        ],
+        "replans": [
+          {
+            "block": 5,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1537
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.8519
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.9511
+          }
+        ],
+        "fires": [
+          {
+            "block": 5,
+            "type": "real_fire",
+            "p": 0.5386
+          },
+          {
+            "block": 17,
+            "type": "real_fire",
+            "p": 0.9272
+          }
+        ]
+      }
+    ],
+    "136": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 5,
+            "pmax": 0.5502
+          },
+          {
+            "block": 15,
+            "T": 10,
+            "pmax": 0.4988
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.5502
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4988
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.9892
+          },
+          {
+            "block": 15,
+            "type": "real_fire",
+            "p": 0.6373
+          }
+        ]
+      }
+    ],
+    "137": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 10,
+            "pmax": 0.2055
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2055
+          }
+        ],
+        "fires": []
+      }
+    ],
+    "138": [
+      {
+        "probes": [
+          {
+            "block": 4,
+            "T": 10,
+            "pmax": 0.2844
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.2937
+          },
+          {
+            "block": 18,
+            "T": 5,
+            "pmax": 0.7973
+          }
+        ],
+        "replans": [
+          {
+            "block": 4,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2844
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2937
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.7973
+          }
+        ],
+        "fires": [
+          {
+            "block": 4,
+            "type": "real_fire",
+            "p": 0.6663
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.9999
+          }
+        ]
+      }
+    ],
+    "139": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 10,
+            "pmax": 0.2523
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.2823
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2523
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2823
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.539
+          }
+        ]
+      }
+    ],
+    "140": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 5,
+            "pmax": 0.574
+          },
+          {
+            "block": 14,
+            "T": 5,
+            "pmax": 0.574
+          },
+          {
+            "block": 15,
+            "T": 5,
+            "pmax": 0.574
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.574
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.574
+          },
+          {
+            "block": 15,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.574
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.7411
+          },
+          {
+            "block": 15,
+            "type": "real_fire",
+            "p": 0.5383
+          }
+        ]
+      }
+    ],
+    "141": [
+      {
+        "probes": [
+          {
+            "block": 9,
+            "T": 5,
+            "pmax": 0.6181
+          }
+        ],
+        "replans": [
+          {
+            "block": 9,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6181
+          }
+        ],
+        "fires": [
+          {
+            "block": 9,
+            "type": "real_fire",
+            "p": 0.9922
+          }
+        ]
+      }
+    ],
+    "142": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.434
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3389
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.434
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3389
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.5845
+          },
+          {
+            "block": 16,
+            "type": "real_fire",
+            "p": 0.7062
+          }
+        ]
+      }
+    ],
+    "143": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 5,
+            "pmax": 0.6684
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6684
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.9208
+          }
+        ]
+      }
+    ],
+    "144": [],
+    "145": [
+      {
+        "probes": [
+          {
+            "block": 8,
+            "T": 10,
+            "pmax": 0.2026
+          },
+          {
+            "block": 14,
+            "T": 10,
+            "pmax": 0.475
+          }
+        ],
+        "replans": [
+          {
+            "block": 8,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2026
+          },
+          {
+            "block": 14,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.475
+          }
+        ],
+        "fires": [
+          {
+            "block": 8,
+            "type": "real_fire",
+            "p": 0.8986
+          },
+          {
+            "block": 14,
+            "type": "real_fire",
+            "p": 0.745
+          }
+        ]
+      }
+    ],
+    "146": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.3031
+          },
+          {
+            "block": 17,
+            "T": 10,
+            "pmax": 0.2709
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3031
+          },
+          {
+            "block": 17,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2709
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.7686
+          }
+        ]
+      }
+    ],
+    "147": [
+      {
+        "probes": [
+          {
+            "block": 6,
+            "T": 10,
+            "pmax": 0.3047
+          },
+          {
+            "block": 11,
+            "T": 5,
+            "pmax": 0.6193
+          },
+          {
+            "block": 16,
+            "T": 10,
+            "pmax": 0.3462
+          },
+          {
+            "block": 18,
+            "T": 10,
+            "pmax": 0.3326
+          }
+        ],
+        "replans": [
+          {
+            "block": 6,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3047
+          },
+          {
+            "block": 11,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.6193
+          },
+          {
+            "block": 16,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3462
+          },
+          {
+            "block": 18,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.3326
+          }
+        ],
+        "fires": [
+          {
+            "block": 6,
+            "type": "real_fire",
+            "p": 0.7919
+          },
+          {
+            "block": 11,
+            "type": "real_fire",
+            "p": 0.6348
+          },
+          {
+            "block": 18,
+            "type": "real_fire",
+            "p": 0.9997
+          }
+        ]
+      }
+    ],
+    "148": [
+      {
+        "probes": [
+          {
+            "block": 10,
+            "T": 5,
+            "pmax": 0.8348
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.1932
+          }
+        ],
+        "replans": [
+          {
+            "block": 10,
+            "type": "probe_t",
+            "T": 5,
+            "p": 0.8348
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.1932
+          }
+        ],
+        "fires": [
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.9486
+          }
+        ]
+      }
+    ],
+    "149": [
+      {
+        "probes": [
+          {
+            "block": 7,
+            "T": 10,
+            "pmax": 0.2608
+          },
+          {
+            "block": 12,
+            "T": 10,
+            "pmax": 0.4552
+          }
+        ],
+        "replans": [
+          {
+            "block": 7,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.2608
+          },
+          {
+            "block": 12,
+            "type": "probe_t",
+            "T": 10,
+            "p": 0.4552
+          }
+        ],
+        "fires": [
+          {
+            "block": 7,
+            "type": "real_fire",
+            "p": 0.6017
+          },
+          {
+            "block": 12,
+            "type": "real_fire",
+            "p": 0.973
+          }
+        ]
+      }
+    ]
+  }
+}
