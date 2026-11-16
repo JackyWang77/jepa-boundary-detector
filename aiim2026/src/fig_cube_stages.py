@@ -21,8 +21,9 @@ H5 = Path(r'D:\stable_worldmodel\datasets\cube_single_expert.h5')
 RESULTS = ROOT / 'results'
 
 plt.rcParams.update({
-    'font.family': 'serif',
-    'font.serif': ['Times New Roman', 'Times', 'DejaVu Serif'],
+    'pdf.fonttype': 42,
+    'ps.fonttype': 42,
+    'font.family': 'DejaVu Sans',
     'font.size': 8,
     'axes.labelsize': 8,
     'xtick.labelsize': 7,
@@ -156,7 +157,7 @@ def task(ep=314):
         block = f['privileged_block_0_pos'][o:o + L]
 
     t_lift = lift_frame(block)
-    stages = [('initial', 0), ('lift / carry', t_lift), ('final', L - 1)]
+    stages = [('Initial', 0), ('Lift / carry', t_lift), ('Final', L - 1)]
     fig, axes = plt.subplots(1, 3, figsize=(7.0, 2.4))
     for ax, (label, t) in zip(axes, stages):
         ax.imshow(pix[t])

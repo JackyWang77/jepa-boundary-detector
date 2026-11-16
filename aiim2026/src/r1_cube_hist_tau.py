@@ -19,6 +19,9 @@ import h5py
 import hdf5plugin  # noqa: F401
 import matplotlib
 matplotlib.use('Agg')
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
+matplotlib.rcParams['font.family'] = 'DejaVu Sans'
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
@@ -165,7 +168,7 @@ def main():
         ax.set_title(title, fontsize=9)
         ax.tick_params(labelsize=7)
         ax.set_yticks([])
-    axes[0].set_ylabel('density', fontsize=7)
+    axes[0].set_ylabel('Density', fontsize=7)
     axes[0].legend(fontsize=7, loc='upper right', frameon=False)
     fig.tight_layout(pad=0.4)
     fig.savefig(RESULTS / 'fig3_cube_dist.pdf', bbox_inches='tight')
